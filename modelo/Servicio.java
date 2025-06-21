@@ -20,11 +20,7 @@ public class Servicio {
     public ArrayList<Double> getHistorialPrecios() {
         return historialPrecios;
     }
-    @Override
-    public String toString() {
-        return codigo + " | " + nombre + " | " + precio;
-    }
-
+    
     public String getCodigo() {
         return codigo;
     }
@@ -44,6 +40,9 @@ public class Servicio {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-
+    @Override
+    public String toString() {
+        return String.format("Servicio [codigo=%s, nombre=%s, precio=%.2f]", codigo, nombre, precio);
     }
+}
 

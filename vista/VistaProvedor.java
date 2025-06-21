@@ -1,8 +1,7 @@
 package vista;
 
-import java.util.Scanner;
-
 import controlador.ControladorProvedor;
+import java.util.Scanner;
 import modelo.Provedor;
 
 public class VistaProvedor {
@@ -20,7 +19,7 @@ public class VistaProvedor {
         System.out.println("Ingrese el nombre del provedor: ");
         String nombre = sc.nextLine();
         System.out.println("Ingrese el telefono del provedor: ");
-        int telefono = sc.nextInt();
+        String telefono = sc.nextLine();
         sc.nextLine();
         System.out.println("Ingrese la descripcion del provedor: ");
         String descripcion = sc.nextLine();

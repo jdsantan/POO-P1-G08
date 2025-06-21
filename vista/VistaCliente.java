@@ -1,16 +1,15 @@
 package vista;
 
-import java.util.Scanner;
-
-import modelo.Cliente;
 import controlador.ControladorCliente;
+import java.util.Scanner;
+import modelo.Cliente;
 
 public class VistaCliente {
     private ControladorCliente controlador;
     public VistaCliente(){
     controlador = new ControladorCliente();
     }
-    public void mostrarMenu(){
+    public void mostrarMenuCliente(){
         System.out.println("1. Agregar cliente");
         System.out.println("2. Regresar al menu Principal");
         System.out.print("Seleccione una opción: ");
@@ -25,7 +24,7 @@ public class VistaCliente {
         System.out.println("Ingrese la direccion del cliente: ");
         String direccion = sc.nextLine();
         System.out.println("Ingrese el telefono del cliente: ");
-        int telefono = sc.nextInt();
+        String telefono = sc.nextLine();
         sc.nextLine();
         System.out.println("El cliente es premiun? (true/false) : ");
 

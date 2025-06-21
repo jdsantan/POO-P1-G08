@@ -46,7 +46,6 @@ public class VistaServicio {
                 default:
                     System.out.println("Opción inválida, intenta de nuevo.");
             }
-            // al terminar cada caso, vuelve a mostrarse el menú
         } while (opcion != 3);
     }while (opcion != 3);
     }

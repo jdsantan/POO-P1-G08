@@ -2,8 +2,8 @@ package modelo;
 
 public class Provedor {
     private String id,nombre,descripcion;
-    private int telefono;
-    public Provedor(String id, String nombre, int telefono, String descripcion){
+    private String telefono;
+    public Provedor(String id, String nombre, String telefono, String descripcion){
         this.id = id;
         this.nombre= nombre;
         this.telefono = telefono;
@@ -27,10 +27,10 @@ public class Provedor {
     public void setDireccion(String descripcion){
         this.descripcion= descripcion;
     }
-    public int getTelefono(){
+    public String getTelefono(){
         return telefono;
     }
-    public void setTelefono(int telefono){
+    public void setTelefono(String telefono){
     this.telefono= telefono;
     }
     

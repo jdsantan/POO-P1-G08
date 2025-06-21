@@ -32,14 +32,14 @@ public class VistaTecnico {
             System.out.println("\n--- Menú Técnicos ---");
             System.out.println("1) Agregar técnico");
             System.out.println("2) Eliminar técnico");
-            System.out.println("3) Regresar al menú principal");
+            System.out.println("3 ) Regresar al menú principal");
             System.out.print("Seleccione opción: ");
             opcion = sc.nextInt();
-            sc.nextLine(); // limpiar buffer
+            sc.nextLine(); 
 
             switch (opcion) {
                 case 1:
-                    // Agregar
+                    
                     System.out.print("Cédula: ");
                     String ced = sc.nextLine();
                     System.out.print("Nombre: ");

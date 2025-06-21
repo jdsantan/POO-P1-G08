@@ -2,9 +2,9 @@ package modelo;
 
 public class Cliente {
  private String id,nombre,direccion;
-    private int telefono;
+    private String telefono;
     Boolean tipoCliente;
-    public Cliente(String id, String nombre, int telefono, String direccion, Boolean tipoCliente){
+    public Cliente(String id, String nombre, String telefono, String direccion, Boolean tipoCliente){
         this.id = id;
         this.nombre= nombre;
         this.telefono = telefono;
@@ -44,11 +44,11 @@ public class Cliente {
     public void setTipoCliente(Boolean  tipoCliente) {
         this.tipoCliente = tipoCliente;
     }
-    public int getTelefono(){
+    public String getTelefono(){
         return telefono;
     }
 
-    public void setTelefono(int telefono) {
+    public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
 }
