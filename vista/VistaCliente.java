@@ -27,7 +27,8 @@ public class VistaCliente {
         System.out.println("Ingrese el telefono del cliente: ");
         int telefono = sc.nextInt();
         sc.nextLine();
-        System.out.println("clase del cliente: ");
+        System.out.println("El cliente es premiun? (true/false) : ");
+
         boolean tipoCliente = sc.nextBoolean();
         Cliente c1 = new Cliente(id,nombre,direccion,telefono,tipoCliente);
 
