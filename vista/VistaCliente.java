@@ -30,7 +30,7 @@ public class VistaCliente {
         System.out.println("El cliente es premiun? (true/false) : ");
 
         boolean tipoCliente = sc.nextBoolean();
-        Cliente c1 = new Cliente(id,nombre,direccion,telefono,tipoCliente);
+        Cliente c1 = new Cliente(id,nombre,telefono,direccion,tipoCliente);
 
         String mensaje = controlador.agregarCliente(c1);
         System.out.println(mensaje);
