@@ -15,7 +15,7 @@ public class VistaInsumo {
         scanner = new Scanner(System.in);
     }
 
-    public void registrarFaltaInsumo() {
+    public void registrarFaltaInsumos() {
         System.out.println("=== REGISTRAR FALTA DE INSUMO ===");
         System.out.print("Descripción del insumo: ");
         String descripcion = scanner.nextLine();
