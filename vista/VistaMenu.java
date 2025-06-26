@@ -54,7 +54,7 @@ public class VistaMenu {
                     vistaReportes.mostrarIngresosPorServicios();
                     break;
                 case 9:
-                    vistaReportes.mostarIngresosPorTecnico();
+                    vistaReportes.mostrarIngresosPorTecnico();
                     break;
                 case 10:
                     System.out.println("Saliendo del programa...");
