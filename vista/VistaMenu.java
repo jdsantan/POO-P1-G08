@@ -6,6 +6,9 @@ public class VistaMenu {
     private Scanner sc = new Scanner(System.in);
     private ControladorProvedor controladorProvedor = new ControladorProvedor();
     private VistaInsumo vistaInsumo = new VistaInsumo(controladorProvedor);
+    private ControladorOrdenes controladorOrdenes = new ControladorOrdenes();
+    private VistaReportes vistaReportes = new VistaReportes(controladorOrdenes);
+
     
     public void mostrarMenuPrincipal() {
         int opcion;
@@ -48,10 +51,10 @@ public class VistaMenu {
                     controlador.generarFacturaEmpresa();
                     break;
                 case 8:
-                    controlador.reporteIngresosServicios();
+                    vistaReportes.mostrarIngresosPorServicios();
                     break;
                 case 9:
-                    controlador.reporteAtencionServicios();
+                    vistaReportes.mostarIngresosPorTecnico();
                     break;
                 case 10:
                     System.out.println("Saliendo del programa...");
