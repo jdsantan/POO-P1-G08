@@ -18,5 +18,8 @@ public class ControladorProvedor {
         lista.add(provedor);
         return "Provedor agregado satisfactoriamente";
     }
-
+    
+    public ArrayList<Provedor> getListaProvedores(){
+        return lista;
+    }
 }
