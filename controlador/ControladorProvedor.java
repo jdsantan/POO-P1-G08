@@ -11,7 +11,7 @@ public class ControladorProvedor {
 
     public String agregarProvedor(Provedor provedor){
         for(Provedor i : lista){
-            if(i.getNombre().equalsIgnoreCase(provedor.getNombre())){
+            if(i.getId().equalsIgnoreCase(provedor.getId())){
                 return "Cliente ya existe";
             }
         }
@@ -21,5 +21,9 @@ public class ControladorProvedor {
     
     public ArrayList<Provedor> getListaProvedores(){
         return lista;
+    }
+
+    public boolean crearOrden(){
+        return true;
     }
 }

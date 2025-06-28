@@ -1,33 +1,67 @@
 package modelo;
-
 import java.time.LocalDate;
+import java.util.ArrayList;
+
 
 public class OrdenServicio {
-    private Servicio servicio;
-    private Tecnico tecnico;
-    private double monto;
+    public static int contador =1;
+    private String codigo;
+    private Cliente cliente;
+    private Vehiculo vehiculo;
     private LocalDate fecha;
+    private ArrayList<Detalledelservicio>detalle;
+    private double total;
 
-    public OrdenServicio(Servicio servicio, Tecnico tecnico, double monto, LocalDate fecha) {
-        this.servicio = servicio;
-        this.tecnico = tecnico;
-        this.monto = monto;
+
+ 
+    public OrdenServicio(Cliente cliente, Vehiculo vehiculo, LocalDate fecha) {
+        this.codigo = generarCodigo();
+        this.cliente = cliente;
+        this.vehiculo = vehiculo;
         this.fecha = fecha;
+        this.detalle = new ArrayList<>();
+        this.total = 0;
     }
 
-    public Servicio getServicio() {
-        return servicio;
+    private String generarCodigo(){
+        return "ORD" + String.format("%03d", contador ++);
+    }
+    public void agregarDetalle(Servicio servicio, int cantidad) {
+        Detalledelservicio ds = new Detalledelservicio(servicio,cantidad);
+        detalle.add(ds);
+        total += ds.getSubtotal();
     }
 
-    public Tecnico getTecnico() {
-        return tecnico;
+
+    public String getCodigo() {
+        return codigo;
     }
 
-    public double getMonto() {
-        return monto;
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public Vehiculo getVehiculo() {
+        return vehiculo;
     }
 
     public LocalDate getFecha() {
         return fecha;
     }
+
+    public ArrayList<Detalledelservicio> getDetalle() {
+        return detalle;
+    }
+
+    public double getTotal() {
+        return total;
+    }
+    @Override
+    public String toString(){
+                return "Orden #" + codigo + " | Cliente: " + cliente.getNombre() +
+                " | Vehículo: " + vehiculo.getPlaca() +
+                " | Fecha: " + fecha +
+                " | Total: $" + total;
+    }
+
 }

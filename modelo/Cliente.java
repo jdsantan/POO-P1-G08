@@ -1,7 +1,7 @@
 package modelo;
 
 public class Cliente {
- private String id,nombre,direccion;
+    private String id,nombre,direccion;
     private String telefono;
     Boolean tipoCliente;
     public Cliente(String id, String nombre, String telefono, String direccion, Boolean tipoCliente){

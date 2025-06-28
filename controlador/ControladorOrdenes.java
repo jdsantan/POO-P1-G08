@@ -17,4 +17,6 @@ public class ControladorOrdenes {
     public ArrayList<OrdenServicio> getListaOrdenes() {
         return listaOrdenes;
     }
+
+    public 
 }

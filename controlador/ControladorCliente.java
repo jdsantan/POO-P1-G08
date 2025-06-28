@@ -13,7 +13,7 @@ public class ControladorCliente {
 
     public String agregarCliente(Cliente CLnuevo){
         for(Cliente a : listaCliente){
-            if(a.getNombre().equalsIgnoreCase(CLnuevo.getNombre())){
+            if(a.getId().equalsIgnoreCase(CLnuevo.getId())){
                 return "Usuario ya existe";
             }
         }

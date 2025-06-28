@@ -10,9 +10,26 @@ public class VistaCliente {
     controlador = new ControladorCliente();
     }
     public void mostrarMenuCliente(){
-        System.out.println("1. Agregar cliente");
-        System.out.println("2. Regresar al menu Principal");
-        System.out.print("Seleccione una opción: ");
+        Scanner sc = new Scanner(System.in);
+        int opcion;
+        do {
+            System.out.println("1. Agregar cliente");
+            System.out.println("2. Regresar al menu Principal");
+            System.out.print("Seleccione una opción: ");
+            opcion = sc.nextInt();
+            switch (opcion) {
+                case 1:
+                    agregarCliente();
+                    break;
+                case 2:
+                    System.out.println("Regresando al menu principal");;
+                    break;                   
+                default:
+                    System.out.println("Opcion invalida");;
+        }
+        } while (opcion !=2);
+        sc.close();
+
     }
     
     public void agregarCliente(){
@@ -33,5 +50,6 @@ public class VistaCliente {
 
         String mensaje = controlador.agregarCliente(c1);
         System.out.println(mensaje);
+        sc.close();
     }
 }
