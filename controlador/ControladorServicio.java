@@ -40,6 +40,14 @@ public class ControladorServicio {
         }
         return "No se encontró servicio con código " + codigo;
     }
+    public Servicio buscarPorCodigo(String codigo){
+        for(Servicio s : lista){
+            if(codigo.equalsIgnoreCase(s.getCodigo())){
+                return s;
+            }
+        }
+        return null;
+    }
     public ArrayList<Servicio> getListaServicios() {
         return lista;
     }

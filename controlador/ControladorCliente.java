@@ -19,7 +19,13 @@ public class ControladorCliente {
         }
         listaCliente.add(CLnuevo);
         return "Cliente agregado satisfactoriamente";
-    }  
-
-    
+    }
+    public Cliente buscarCliente(String id){
+        for(Cliente c: listaCliente){
+            if(id.equalsIgnoreCase(c.getId())){
+                return c;
+            }
+        }
+        return null;
+    } 
 }

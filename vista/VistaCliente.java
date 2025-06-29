@@ -6,13 +6,14 @@ import modelo.Cliente;
 
 public class VistaCliente {
     private ControladorCliente controlador;
-    public VistaCliente(){
-    controlador = new ControladorCliente();
+    public VistaCliente(ControladorCliente controlador){
+    this.controlador = controlador;
     }
     public void mostrarMenuCliente(){
         Scanner sc = new Scanner(System.in);
         int opcion;
         do {
+            System.out.println("\n=== MENÚ Cliente ===");
             System.out.println("1. Agregar cliente");
             System.out.println("2. Regresar al menu Principal");
             System.out.print("Seleccione una opción: ");

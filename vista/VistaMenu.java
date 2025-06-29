@@ -1,14 +1,21 @@
 package vista;
 import java.util.Scanner;
 import controlador.*;
+import modelo.Cliente;
+import modelo.Provedor;
 
 public class VistaMenu {
     private Scanner sc = new Scanner(System.in);
-    private ControladorProvedor controladorProvedor = new ControladorProvedor();
-    private VistaInsumo vistaInsumo = new VistaInsumo(controladorProvedor);
-    private ControladorOrdenes controladorOrdenes = new ControladorOrdenes();
-    private VistaReportes vistaReportes = new VistaReportes(controladorOrdenes);
+    public ControladorProvedor controladorProvedor = new ControladorProvedor();
+    public VistaProvedor vistaProvedor = new VistaProvedor(controladorProvedor);
+    public VistaInsumo vistaInsumo = new VistaInsumo(controladorProvedor);
+    public ControladorOrdenes controladorOrdenes = new ControladorOrdenes();
+    public VistaOrdenServicio vistaOrdenServicio = new VistaOrdenServicio(controladorOrdenes);
+    public VistaReportes vistaReportes = new VistaReportes(controladorOrdenes);
+    public ControladorCliente controladorCliente = new ControladorCliente();
+    public VistaCliente vistaCliente = new VistaCliente(controladorCliente);
 
+   
     
     public void mostrarMenuPrincipal() {
         int opcion;
@@ -30,10 +37,10 @@ public class VistaMenu {
 
             switch (opcion) {
                 case 1:
-                    controlador.mostrarMenuCliente();
+                    vistaCliente.mostrarMenuCliente();
                     break;
                 case 2:
-                    controlador.mostrarMenuProveedor();
+                    vistaProvedor.mostrarMenuProvedor();
                     break;
                 case 3:
                     controlador.mostrarMenuTecnico();
@@ -42,7 +49,7 @@ public class VistaMenu {
                     controlador.mostrarMenuServicio();
                     break;
                 case 5:
-                    controlador.generarOrdenServicio();
+                    vistaOrdenServicio.generarOrden();
                     break;
                 case 6:
                     vistaInsumo.registrarFaltaInsumos();

@@ -1,6 +1,10 @@
 package controlador;
 
+import modelo.Cliente;
 import modelo.OrdenServicio;
+import modelo.Vehiculo;
+
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class ControladorOrdenes {
@@ -9,14 +13,17 @@ public class ControladorOrdenes {
     public ControladorOrdenes() {
         listaOrdenes = new ArrayList<>();
     }
-
-    public void agregarOrden(OrdenServicio orden) {
-        listaOrdenes.add(orden);
+    public OrdenServicio crearOrden(Cliente cliente, Vehiculo vehiculo,LocalDate fecha){
+        OrdenServicio nueva = new OrdenServicio(cliente,vehiculo,fecha);
+        listaOrdenes.add(nueva);
+        return nueva;
     }
-
-    public ArrayList<OrdenServicio> getListaOrdenes() {
+    public void mostrarTodasOrdenes(){
+        for(OrdenServicio o : listaOrdenes){
+            System.out.println(o);
+        }
+    }
+    public ArrayList<OrdenServicio> getListaOrdenes(){
         return listaOrdenes;
     }
-
-    public 
 }

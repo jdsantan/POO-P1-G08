@@ -48,6 +48,7 @@ public class VistaServicio {
             }
         } while (opcion != 3);
     }while (opcion != 3);
+    sc.close();
     }
  public void agregarServicio(){
         Scanner sc = new Scanner(System.in);
@@ -59,6 +60,7 @@ public class VistaServicio {
         sc.nextLine();
         String mensaje = controlador.agregarServicio(nombre, precio);
         System.out.println(mensaje);
+        sc.close();
     }
     public void editarServicio(){
         Scanner sc = new Scanner(System.in);
@@ -70,5 +72,6 @@ public class VistaServicio {
         sc.nextLine();
         String mensaje = controlador.editarPrecio(codigo, nuevoPrecio);
         System.out.println(mensaje);
+        sc.close();
     }
 }

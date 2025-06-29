@@ -2,6 +2,9 @@ package modelo;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
+import controlador.ControladorTecnico;
+import controlador.ControladorServicio;
+
 
 public class OrdenServicio {
     public static int contador =1;
@@ -11,9 +14,9 @@ public class OrdenServicio {
     private LocalDate fecha;
     private ArrayList<Detalledelservicio>detalle;
     private double total;
+    public ControladorServicio controladorServicio = new ControladorServicio();
 
 
- 
     public OrdenServicio(Cliente cliente, Vehiculo vehiculo, LocalDate fecha) {
         this.codigo = generarCodigo();
         this.cliente = cliente;
@@ -29,7 +32,7 @@ public class OrdenServicio {
     public void agregarDetalle(Servicio servicio, int cantidad) {
         Detalledelservicio ds = new Detalledelservicio(servicio,cantidad);
         detalle.add(ds);
-        total += ds.getSubtotal();
+        total += servicio.getPrecio();
     }
 
 
@@ -56,6 +59,7 @@ public class OrdenServicio {
     public double getTotal() {
         return total;
     }
+
     @Override
     public String toString(){
                 return "Orden #" + codigo + " | Cliente: " + cliente.getNombre() +

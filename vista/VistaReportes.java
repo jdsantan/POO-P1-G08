@@ -29,7 +29,7 @@ public class VistaReportes {
             if (orden.getFecha().getYear() == anio && orden.getFecha().getMonthValue() == mes) {
                 String nombreServicio = orden.getServicio().getNombre();
                 ingresosPorServicio.put(nombreServicio,
-                    ingresosPorServicio.getOrDefault(nombreServicio, 0.0) + orden.getMonto());
+                    ingresosPorServicio.getOrDefault(nombreServicio, 0.0) + orden.getTotal());
             }
         }
 
@@ -51,7 +51,7 @@ public class VistaReportes {
             if (orden.getFecha().getYear() == anio && orden.getFecha().getMonthValue() == mes) {
                 String nombreTecnico = orden.getTecnico().getNombre();
                 ingresosPorTecnico.put(nombreTecnico,
-                    ingresosPorTecnico.getOrDefault(nombreTecnico, 0.0) + orden.getMonto());
+                    ingresosPorTecnico.getOrDefault(nombreTecnico, 0.0) + orden.getTotal());
             }
         }
 

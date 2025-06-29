@@ -5,11 +5,15 @@ import java.util.Scanner;
 import modelo.Provedor;
 
 public class VistaProvedor {
-    ControladorProvedor control = new ControladorProvedor();
-    public void mostrarMenu(){
+    public ControladorProvedor control;
+    public VistaProvedor(ControladorProvedor control){
+        this.control = control;
+    }
+    public void mostrarMenuProvedor(){
         Scanner sc = new Scanner(System.in);
         int opcion;
         do {
+            System.out.println("\n=== MENÚ Provedor ===");
             System.out.println("1. Agregar Provedor");
             System.out.println("2. Regresar al menu Principal");
             System.out.print("Seleccione una opción: ");
