@@ -1,48 +1,100 @@
 package controlador;
-import modelo.Detalledelservicio;
-import modelo.FacturasEmpresas;
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.List;
-public class ControladorFacturaEmpresa {
- private static final double CARGO_EMPRESARIAL = 50.0;
-    private static final String[] NOMBRES_MESES = {
-        "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
-        "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
-    };
- public void prepararFactura(FacturasEmpresas factura,
-                                List<Detalledelservicio> todasLasOrdenes) {
-        List<Detalledelservicio> filtradas = new ArrayList<>();
+import modelo.*;
 
-        // 1) Filtrar
-        for (Detalledelservicio o : todasLasOrdenes) {
-            if ( o.getCodigoEmpresa().equals(factura.getCodigoEmpresa())
-              && o.getFecha().getYear() == factura.getAño()
-              && o.getFecha().getMonthValue() == factura.getMes() ) {
-                filtradas.add(o);
+public class ControladorFacturaEmpresa {
+    private ArrayList<FacturasEmpresas> listaFacturas;
+    private ArrayList<ClienteEmpresarial> listaClientesEmpresariales;
+    private ControladorOrdenes controladorOrdenes;
+    
+    public static final double TARIFA_MENSUAL_EMPRESA = 50.0;
+    
+    public ControladorFacturaEmpresa(ControladorOrdenes controladorOrdenes) {
+        this.listaFacturas = new ArrayList<>();
+        this.listaClientesEmpresariales = new ArrayList<>();
+        this.controladorOrdenes = controladorOrdenes;
+        inicializarClientesEmpresariales();
+    }
+    
+    private void inicializarClientesEmpresariales() {
+        // Agregar algunos clientes empresariales de ejemplo
+        listaClientesEmpresariales.add(new ClienteEmpresarial(true, "Grupo HG S.A", "EMP001"));
+        listaClientesEmpresariales.add(new ClienteEmpresarial(true, "Transportes Unidos", "EMP002"));
+        listaClientesEmpresariales.add(new ClienteEmpresarial(true, "LogiCorp S.A", "EMP003"));
+    }
+    
+    public ClienteEmpresarial buscarClienteEmpresarial(String codigoEmpresa) {
+        for (ClienteEmpresarial cliente : listaClientesEmpresariales) {
+            if (cliente.getCodigoEmpresa().equalsIgnoreCase(codigoEmpresa)) {
+                return cliente;
             }
         }
-
-        // 2) Asignar al modelo
-        factura.setOrdenes(filtradas);
-
-        // 3) Calcular subtotal
-        double subtotal = 0;
-        for (Detalledelservicio o : filtradas) {
-            subtotal += o.getCantidad() * o.getPrecioUnitario();
-        }
-
-        // 4) Total final con cargo fijo
-        factura.setTotalPagar(subtotal + CARGO_EMPRESARIAL);
+        return null;
     }
- public String nombreMes(int mes) {
-        if (mes >= 1 && mes <= 12) {
-            return NOMBRES_MESES[mes - 1];
+    
+    public FacturasEmpresas generarFactura(String codigoEmpresa, int mes, int año) {
+        ClienteEmpresarial cliente = buscarClienteEmpresarial(codigoEmpresa);
+        if (cliente == null) {
+            return null;
         }
-        return "Mes inválido";
+        
+        // Crear nueva factura
+        FacturasEmpresas factura = new FacturasEmpresas(codigoEmpresa, cliente, LocalDate.now(), mes, año);
+        
+        // Buscar órdenes del período especificado
+        ArrayList<OrdenServicio> ordenesPeriodo = buscarOrdenesPorPeriodo(codigoEmpresa, mes, año);
+        
+        // Calcular total
+        double totalServicios = 0.0;
+        ArrayList<Detalledelservicio> detallesFactura = new ArrayList<>();
+        
+        for (OrdenServicio orden : ordenesPeriodo) {
+            for (Detalledelservicio detalle : orden.getDetalle()) {
+                detallesFactura.add(detalle);
+                totalServicios += detalle.getSubtotal();
+            }
+        }
+        
+        // Agregar tarifa mensual empresarial
+        double totalFinal = totalServicios + TARIFA_MENSUAL_EMPRESA;
+        
+        factura.setOrdenes(detallesFactura);
+        factura.setTotalPagar(totalFinal);
+        
+        listaFacturas.add(factura);
+        return factura;
     }
-
-    public double getCargoFijo() {
-        return CARGO_EMPRESARIAL;
+    
+    private ArrayList<OrdenServicio> buscarOrdenesPorPeriodo(String codigoEmpresa, int mes, int año) {
+        ArrayList<OrdenServicio> ordenesPeriodo = new ArrayList<>();
+        
+        for (OrdenServicio orden : controladorOrdenes.getListaOrdenes()) {
+            LocalDate fechaOrden = orden.getFecha();
+            
+            // Verificar si la orden pertenece al período y empresa
+            if (fechaOrden.getMonthValue() == mes && 
+                fechaOrden.getYear() == año &&
+                esOrdenDeEmpresa(orden, codigoEmpresa)) {
+                ordenesPeriodo.add(orden);
+            }
+        }
+        
+        return ordenesPeriodo;
+    }
+    
+    private boolean esOrdenDeEmpresa(OrdenServicio orden, String codigoEmpresa) {
+        return orden.getCliente().getId().startsWith(codigoEmpresa.substring(0, 3));
+    }
+    
+    public ArrayList<ClienteEmpresarial> getListaClientesEmpresariales() {
+        return listaClientesEmpresariales;
+    }
+    
+    public String[] getNombresMeses() {
+        return new String[]{
+            "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+            "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
+        };
     }
 }
-

@@ -57,5 +57,8 @@ public class Cliente {
         return "Cliente [id=" + id + ", nombre=" + nombre + ", direccion=" + direccion + ", telefono=" + telefono
                 + ", tipoCliente=" + tipoCliente + "]";
     }
+
+  
+    }
     
-}
+

@@ -5,10 +5,6 @@ public class Main {
         VistaMenu vistaMenu = new VistaMenu();
         vistaMenu.mostrarMenuPrincipal();
         VistaServicio vistaServicio = new VistaServicio();
-        vistaServicio.mostrarmenuServicios();;
-        System.out.println(">>> Fin del módulo de técnicos.");
-         VistaTecnico vistaTecnico = new VistaTecnico();
-        vistaTecnico.mostrarmenuTecnicos();
-        System.out.println(">>> Fin del módulo de técnicos.");
+        
     }
 }

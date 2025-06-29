@@ -29,6 +29,7 @@ public void Incializar() {
     listaClientes.add(new Cliente("C002", "Ana Gómez", "0987654322", "Av. Siempre Viva 456", true));
     listaClientes.add(new Cliente("C003", "Luis Rodríguez", "0987654323", "Calle Falsa 789", false));
     listaClientes.add(new Cliente("C004", "María López", "0987654324", "Calle Real 101", true));
+
   
 }
 public ArrayList<Tecnico> getListaTecnicos() {
@@ -46,4 +47,5 @@ public ArrayList<Tecnico> getListaTecnicos() {
     public ArrayList<Provedor> getListaProvedores() {
         return listaProvedores;    
 }
+
 }

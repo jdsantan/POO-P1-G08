@@ -1,6 +1,6 @@
 package vista;
-import java.util.Scanner;
 import controlador.*;
+import java.util.Scanner;
 
 
 public class VistaMenu {
@@ -14,7 +14,8 @@ public class VistaMenu {
     public ControladorCliente controladorCliente = new ControladorCliente();
     public VistaCliente vistaCliente = new VistaCliente(controladorCliente);
     public VistaTecnico vistaTecnico = new VistaTecnico();
-    public VistaFacturaEmpresas vistaFacturaEmpresas = new VistaFacturaEmpresas(); 
+      public ControladorFacturaEmpresa controladorFactura = new ControladorFacturaEmpresa(controladorOrdenes);
+    public VistaFacturaEmpresa vistaFactura = new VistaFacturaEmpresa(controladorFactura);
 
    
     
@@ -55,7 +56,7 @@ public class VistaMenu {
                     vistaInsumo.registrarFaltaInsumos();
                     break;
                 case 7:
-                    VistaFacturaEmpresas.generarFactura();
+                    vistaFactura.mostrarMenuFacturacion();
                     break;
                 case 8:
                     vistaReportes.mostrarIngresosPorServicios();
@@ -71,5 +72,8 @@ public class VistaMenu {
             }
         } while (opcion != 0);
     }
-}    
+}
+
+    
+
 

@@ -9,6 +9,15 @@ private LocalDate fechaFacturacion;
 private int mes;
 private int año;
 private ArrayList<Detalledelservicio> ordenes;
+private double totalPagar;
+
+    public double getTotalPagar() {
+        return totalPagar;
+    }
+
+    public void setTotalPagar(double totalPagar) {
+        this.totalPagar = totalPagar;
+    }
 
 public FacturasEmpresas(String codigoEmpresa, ClienteEmpresarial cliente, LocalDate fechaFacturacion, int mes, int año) {
     this.codigoEmpresa = codigoEmpresa;
