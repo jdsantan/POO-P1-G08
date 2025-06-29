@@ -48,10 +48,10 @@ public class ControladorServicio {
         }
         return null;
     }
-    public ArrayList<Servicio> getListaServicios() {
+public ArrayList<Servicio> getListaServicios() {
         return lista;
     }
     public ArrayList<Servicio> getServicios() {
-        return lista;
+        return getServicios();
 }
 }

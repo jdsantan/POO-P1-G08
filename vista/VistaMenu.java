@@ -1,8 +1,7 @@
 package vista;
 import java.util.Scanner;
 import controlador.*;
-import modelo.Cliente;
-import modelo.Provedor;
+
 
 public class VistaMenu {
     private Scanner sc = new Scanner(System.in);
@@ -14,6 +13,8 @@ public class VistaMenu {
     public VistaReportes vistaReportes = new VistaReportes(controladorOrdenes);
     public ControladorCliente controladorCliente = new ControladorCliente();
     public VistaCliente vistaCliente = new VistaCliente(controladorCliente);
+    public VistaTecnico vistaTecnico = new VistaTecnico();
+    public VistaFacturaEmpresas vistaFacturaEmpresas = new VistaFacturaEmpresas(); 
 
    
     
@@ -41,12 +42,11 @@ public class VistaMenu {
                     break;
                 case 2:
                     vistaProvedor.mostrarMenuProvedor();
-                    break;
                 case 3:
-                    controlador.mostrarMenuTecnico();
+                    vistaTecnico.mostrarmenuTecnicos();
                     break;
                 case 4:
-                    controlador.mostrarMenuServicio();
+                    new VistaServicio().mostrarmenuServicios();
                     break;
                 case 5:
                     vistaOrdenServicio.generarOrden();
@@ -55,7 +55,7 @@ public class VistaMenu {
                     vistaInsumo.registrarFaltaInsumos();
                     break;
                 case 7:
-                    controlador.generarFacturaEmpresa();
+                    VistaFacturaEmpresas.generarFactura();
                     break;
                 case 8:
                     vistaReportes.mostrarIngresosPorServicios();

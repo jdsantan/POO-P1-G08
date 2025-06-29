@@ -13,7 +13,7 @@ public class VistaTecnico {
         sc = new Scanner(System.in);
     }
 
-    public void menuTecnicos() {
+    public void mostrarmenuTecnicos() {
         int opcion;
         do {
             ArrayList<Tecnico> lista = ctrl.getListaTecnicos();

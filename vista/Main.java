@@ -2,11 +2,13 @@ package vista;
 
 public class Main {
     public static void main(String[] args) {
-        VistaServicio vista = new VistaServicio();
-        vista.menuServicios();
+        VistaMenu vistaMenu = new VistaMenu();
+        vistaMenu.mostrarMenuPrincipal();
+        VistaServicio vistaServicio = new VistaServicio();
+        vistaServicio.mostrarmenuServicios();;
         System.out.println(">>> Fin del módulo de técnicos.");
          VistaTecnico vistaTecnico = new VistaTecnico();
-        vistaTecnico.menuTecnicos();
+        vistaTecnico.mostrarmenuTecnicos();
         System.out.println(">>> Fin del módulo de técnicos.");
     }
 }

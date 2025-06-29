@@ -5,7 +5,7 @@ import java.util.Scanner;
 import modelo.Servicio;
 
 public class VistaServicio {
-     public void menuServicios() {
+     public void mostrarmenuServicios() {
         int opcion;
         Scanner sc = new Scanner(System.in);
         ControladorServicio controlador = new ControladorServicio();
