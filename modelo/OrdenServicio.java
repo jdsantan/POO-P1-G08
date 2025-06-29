@@ -2,8 +2,6 @@ package modelo;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-import controlador.ControladorTecnico;
-import controlador.ControladorServicio;
 
 
 public class OrdenServicio {
@@ -14,16 +12,18 @@ public class OrdenServicio {
     private LocalDate fecha;
     private ArrayList<Detalledelservicio>detalle;
     private double total;
-    public ControladorServicio controladorServicio = new ControladorServicio();
+    private Tecnico tecnico;
 
 
-    public OrdenServicio(Cliente cliente, Vehiculo vehiculo, LocalDate fecha) {
+
+    public OrdenServicio(Cliente cliente, Vehiculo vehiculo,Tecnico tecnico, LocalDate fecha) {
         this.codigo = generarCodigo();
         this.cliente = cliente;
         this.vehiculo = vehiculo;
         this.fecha = fecha;
         this.detalle = new ArrayList<>();
         this.total = 0;
+        this.tecnico = tecnico;
     }
 
     private String generarCodigo(){
@@ -66,6 +66,10 @@ public class OrdenServicio {
                 " | Vehículo: " + vehiculo.getPlaca() +
                 " | Fecha: " + fecha +
                 " | Total: $" + total;
+    }
+
+    public Tecnico getTecnico(){
+        return tecnico;
     }
 
 }

@@ -2,6 +2,7 @@ package controlador;
 
 import modelo.Cliente;
 import modelo.OrdenServicio;
+import modelo.Tecnico;
 import modelo.Vehiculo;
 
 import java.time.LocalDate;
@@ -13,8 +14,8 @@ public class ControladorOrdenes {
     public ControladorOrdenes() {
         listaOrdenes = new ArrayList<>();
     }
-    public OrdenServicio crearOrden(Cliente cliente, Vehiculo vehiculo,LocalDate fecha){
-        OrdenServicio nueva = new OrdenServicio(cliente,vehiculo,fecha);
+    public OrdenServicio crearOrden(Cliente cliente, Vehiculo vehiculo,LocalDate fecha,Tecnico tecnico){
+        OrdenServicio nueva = new OrdenServicio(cliente,vehiculo,tecnico,fecha);
         listaOrdenes.add(nueva);
         return nueva;
     }

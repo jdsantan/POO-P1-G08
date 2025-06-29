@@ -4,16 +4,19 @@ import java.util.Scanner;
 import modelo.Cliente;
 import modelo.OrdenServicio;
 import modelo.Servicio;
+import modelo.Tecnico;
 import modelo.Vehiculo;
 import controlador.ControladorCliente;
 import controlador.ControladorOrdenes;
 import controlador.ControladorServicio;
+import controlador.ControladorTecnico;
 
 import java.time.LocalDate;
 public class VistaOrdenServicio {
     private ControladorOrdenes controladorOrdenes;
     private ControladorCliente controladorCliente;
     private ControladorServicio controladorServicio;
+    private ControladorTecnico controladorTecnico;
     public VistaOrdenServicio(ControladorOrdenes controladorOrdenes){
         this.controladorOrdenes = controladorOrdenes;
     }
@@ -44,6 +47,11 @@ public class VistaOrdenServicio {
         String entrada = sc.nextLine();
         fecha = LocalDate.parse(entrada);
 
+        System.out.print("Ingrese ID del técnico asignado: ");
+        String idTecnico = sc.nextLine();
+        Tecnico tecnico = controladorTecnico.buscarTecnico(idTecnico);
+
+
 
         try {
             tp = Vehiculo.TipoVehiculo.valueOf(tipVehiculo);
@@ -53,7 +61,7 @@ public class VistaOrdenServicio {
         }
         Vehiculo vehiculo = new Vehiculo(placa, tp);
 
-        OrdenServicio orden = controladorOrdenes.crearOrden(cliente, vehiculo, fecha);
+        OrdenServicio orden = controladorOrdenes.crearOrden(cliente, vehiculo,fecha,tecnico);
 
         System.out.println("Ingrese el codigo del servicio (-1 para terminar)");
         String codigo= sc.nextLine();

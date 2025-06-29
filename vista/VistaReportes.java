@@ -27,9 +27,12 @@ public class VistaReportes {
 
         for (OrdenServicio orden : controladorOrdenes.getListaOrdenes()) {
             if (orden.getFecha().getYear() == anio && orden.getFecha().getMonthValue() == mes) {
-                String nombreServicio = orden.getServicio().getNombre();
+                for (Detalledelservicio detalledelservicio : orden.getDetalle()){
+                    String nombreServicio = detalledelservicio.getServicio().getNombre();
                 ingresosPorServicio.put(nombreServicio,
-                    ingresosPorServicio.getOrDefault(nombreServicio, 0.0) + orden.getTotal());
+                    ingresosPorServicio.getOrDefault(nombreServicio, 0.0) + orden.getTotal());                   
+                }
+
             }
         }
 

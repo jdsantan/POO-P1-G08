@@ -14,7 +14,7 @@ public class VistaMenu {
     public ControladorCliente controladorCliente = new ControladorCliente();
     public VistaCliente vistaCliente = new VistaCliente(controladorCliente);
     public VistaTecnico vistaTecnico = new VistaTecnico();
-      public ControladorFacturaEmpresa controladorFactura = new ControladorFacturaEmpresa(controladorOrdenes);
+    public ControladorFacturaEmpresa controladorFactura = new ControladorFacturaEmpresa(controladorOrdenes);
     public VistaFacturaEmpresa vistaFactura = new VistaFacturaEmpresa(controladorFactura);
 
    
