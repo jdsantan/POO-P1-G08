@@ -48,7 +48,7 @@ public class VistaServicio {
             }
         } while (opcion != 3);
     }while (opcion != 3);
-    sc.close();
+    
     }
  public void agregarServicio(){
         Scanner sc = new Scanner(System.in);

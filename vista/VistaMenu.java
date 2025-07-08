@@ -43,6 +43,7 @@ public class VistaMenu {
                     break;
                 case 2:
                     vistaProvedor.mostrarMenuProvedor();
+                    break;
                 case 3:
                     vistaTecnico.mostrarmenuTecnicos();
                     break;

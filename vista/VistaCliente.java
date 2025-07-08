@@ -23,13 +23,13 @@ public class VistaCliente {
                     agregarCliente();
                     break;
                 case 2:
-                    System.out.println("Regresando al menu principal");;
+                    System.out.println("Regresando al menu principal");
                     break;                   
                 default:
-                    System.out.println("Opcion invalida");;
+                    System.out.println("Opcion invalida");
         }
         } while (opcion !=2);
-        sc.close();
+        
 
     }
     
@@ -51,6 +51,6 @@ public class VistaCliente {
 
         String mensaje = controlador.agregarCliente(c1);
         System.out.println(mensaje);
-        sc.close();
+       
     }
 }

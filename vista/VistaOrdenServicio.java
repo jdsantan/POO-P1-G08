@@ -14,7 +14,7 @@ import controlador.ControladorTecnico;
 import java.time.LocalDate;
 public class VistaOrdenServicio {
     private ControladorOrdenes controladorOrdenes;
-    private ControladorCliente controladorCliente;
+    private ControladorCliente controladorCliente = new ControladorCliente();
     private ControladorServicio controladorServicio;
     private ControladorTecnico controladorTecnico;
     public VistaOrdenServicio(ControladorOrdenes controladorOrdenes){
@@ -81,7 +81,7 @@ public class VistaOrdenServicio {
             codigo= sc.nextLine();
 
         }
-        sc.close();
+        
     }
 
 

@@ -6,11 +6,12 @@ import modelo.Provedor;
 
 public class VistaProvedor {
     public ControladorProvedor control;
+    Scanner sc;
     public VistaProvedor(ControladorProvedor control){
         this.control = control;
+        sc= new Scanner(System.in);
     }
     public void mostrarMenuProvedor(){
-        Scanner sc = new Scanner(System.in);
         int opcion;
         do {
             System.out.println("\n=== MENÚ Provedor ===");
@@ -18,6 +19,7 @@ public class VistaProvedor {
             System.out.println("2. Regresar al menu Principal");
             System.out.print("Seleccione una opción: ");
             opcion = sc.nextInt();
+            sc.nextLine();
             switch (opcion) {
                 case 1:
                     agregarProvedor();
@@ -26,14 +28,15 @@ public class VistaProvedor {
                     System.out.println("Regresando al menu principal");
                     break;           
                 default:
-                    System.out.println("Opcion invalida");;
+                    System.out.println("Opcion invalida");
             }            
         } while (opcion!=2);
-        sc.close();
+        
+        
     }
     
     public void agregarProvedor(){
-        Scanner sc = new Scanner(System.in);
+        
         System.out.println("Ingrese la identificacion del provedor: ");
         String id = sc.nextLine();
         System.out.println("Ingrese el nombre del provedor: ");
@@ -47,6 +50,6 @@ public class VistaProvedor {
         Provedor p1 = new Provedor(id, nombre, telefono, descripcion);
         String mensaje = control.agregarProvedor(p1);
         System.out.println(mensaje);  
-        sc.close();     
+             
     }
 }
