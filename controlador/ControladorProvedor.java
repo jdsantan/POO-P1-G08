@@ -5,8 +5,8 @@ import modelo.Provedor;
 
 public class ControladorProvedor {
     ArrayList<Provedor>lista;
-    public ControladorProvedor(){
-        lista = new ArrayList<>();
+    public ControladorProvedor(ArrayList<Provedor>lista){
+        this.lista = lista;
     }
 
     public String agregarProvedor(Provedor provedor){

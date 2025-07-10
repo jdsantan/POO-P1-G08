@@ -14,11 +14,14 @@ import controlador.ControladorTecnico;
 import java.time.LocalDate;
 public class VistaOrdenServicio {
     private ControladorOrdenes controladorOrdenes;
-    private ControladorCliente controladorCliente = new ControladorCliente();
-    private ControladorServicio controladorServicio = new ControladorServicio();
-    private ControladorTecnico controladorTecnico = new ControladorTecnico();
-    public VistaOrdenServicio(ControladorOrdenes controladorOrdenes){
+    private ControladorCliente controladorCliente;
+    private ControladorServicio controladorServicio;
+    private ControladorTecnico controladorTecnico;
+    public VistaOrdenServicio(ControladorOrdenes controladorOrdenes,ControladorCliente controladorCliente,ControladorServicio controladorServicio,ControladorTecnico controladorTecnico){
         this.controladorOrdenes = controladorOrdenes;
+        this.controladorCliente = controladorCliente;
+        this.controladorServicio = controladorServicio;
+        this.controladorTecnico = controladorTecnico;
     }
 
     
@@ -28,6 +31,7 @@ public class VistaOrdenServicio {
         String id,tipVehiculo,placa;
         LocalDate fecha;
         Vehiculo.TipoVehiculo tp = null; 
+ 
         
 
         System.out.println("Ingrese la identificacion del cliente: ");
@@ -50,6 +54,9 @@ public class VistaOrdenServicio {
         System.out.print("Ingrese ID del técnico asignado: ");
         String idTecnico = sc.nextLine();
         Tecnico tecnico = controladorTecnico.buscarTecnico(idTecnico);
+        if(tecnico == null){
+            System.out.println("Tecnico no encontrado");
+        }
 
 
 
@@ -76,12 +83,14 @@ public class VistaOrdenServicio {
                 sc.nextLine();
                 orden.agregarDetalle(servicio, cantidad);
                 System.out.println("Servicio agregado");
+                
             }
             System.out.println("Ingrese el codigo del servicio (-1 para terminar)");
             codigo= sc.nextLine();
 
         }
         
+        System.out.println("\nOrden de servicio finalizada. Total: $" + orden.getTotal());
     }
 
 

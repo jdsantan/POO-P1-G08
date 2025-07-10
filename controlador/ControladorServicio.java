@@ -5,8 +5,8 @@ import modelo.Servicio;
 
 public class ControladorServicio {
     public ArrayList<Servicio>lista;
-    public ControladorServicio(){
-        lista = new ArrayList<>();
+    public ControladorServicio(ArrayList<Servicio>lista){
+        this.lista = lista;
     }
 
     public String agregarServicio(String nombre,double precio){

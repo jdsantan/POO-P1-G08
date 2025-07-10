@@ -8,8 +8,8 @@ public class VistaTecnico {
     private ControladorTecnico ctrl;
     private Scanner sc;
 
-    public VistaTecnico() {
-        ctrl = new ControladorTecnico();
+    public VistaTecnico(ControladorTecnico controladorTecnico) {
+        ctrl = controladorTecnico;
         sc = new Scanner(System.in);
     }
 

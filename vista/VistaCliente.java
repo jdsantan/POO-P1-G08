@@ -6,11 +6,11 @@ import modelo.Cliente;
 
 public class VistaCliente {
     private ControladorCliente controlador;
+    private Scanner sc = new Scanner(System.in);
     public VistaCliente(ControladorCliente controlador){
     this.controlador = controlador;
     }
     public void mostrarMenuCliente(){
-        Scanner sc = new Scanner(System.in);
         int opcion;
         do {
             System.out.println("\n=== MENÚ Cliente ===");
@@ -35,7 +35,7 @@ public class VistaCliente {
     }
     
     public void agregarCliente(){
-        Scanner sc = new Scanner(System.in);
+        
         System.out.println("Ingrese la identificacion del cliente: ");
         String id = sc.nextLine();
         System.out.println("Ingrese el nombre del cliente: ");

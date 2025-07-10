@@ -7,10 +7,16 @@ import modelo.Tecnico;
 
 
 public class ControladorMenu {
-    ArrayList<Tecnico> listaTecnicos = new ArrayList<>();
-    ArrayList<Servicio> listaServicios = new ArrayList<>();
-    ArrayList<Cliente> listaClientes = new ArrayList<>();
-    ArrayList<Provedor> listaProvedores = new ArrayList<>();
+    ArrayList<Tecnico> listaTecnicos;
+    ArrayList<Servicio> listaServicios;
+    ArrayList<Cliente> listaClientes;
+    ArrayList<Provedor> listaProvedores;
+    public ControladorMenu(){
+        listaClientes = new ArrayList<>();
+        listaTecnicos = new ArrayList<>();
+        listaServicios = new ArrayList<>();
+        listaProvedores = new ArrayList<>();
+    }
     public void Incializar() {
     listaTecnicos.add(new Tecnico("0928497973","Juan Santana","0981124061","Mecánico"));
     listaTecnicos.add(new Tecnico("0928497974","Pedro Pérez","0981124062","Electricista"));

@@ -5,17 +5,50 @@ import java.util.Scanner;
 
 public class VistaMenu {
     private Scanner sc = new Scanner(System.in);
-    public ControladorProvedor controladorProvedor = new ControladorProvedor();
-    public VistaProvedor vistaProvedor = new VistaProvedor(controladorProvedor);
-    public VistaInsumo vistaInsumo = new VistaInsumo(controladorProvedor);
+
+
+    public ControladorCliente controladorCliente;
+    public VistaCliente vistaCliente;
+
+    public ControladorProvedor controladorProvedor;
+    public VistaProvedor vistaProvedor;
+
+    public ControladorTecnico controladorTecnico;
+    public VistaTecnico vistaTecnico;
+
+    public ControladorServicio controladorServicio;
+    public VistaServicio vistaServicio;
+
     public ControladorOrdenes controladorOrdenes = new ControladorOrdenes();
-    public VistaOrdenServicio vistaOrdenServicio = new VistaOrdenServicio(controladorOrdenes);
+    public VistaOrdenServicio vistaOrdenServicio;
+
+
+    public VistaInsumo vistaInsumo = new VistaInsumo(controladorProvedor);
+
     public VistaReportes vistaReportes = new VistaReportes(controladorOrdenes);
-    public ControladorCliente controladorCliente = new ControladorCliente();
-    public VistaCliente vistaCliente = new VistaCliente(controladorCliente);
-    public VistaTecnico vistaTecnico = new VistaTecnico();
+
+
     public ControladorFacturaEmpresa controladorFactura = new ControladorFacturaEmpresa(controladorOrdenes);
     public VistaFacturaEmpresa vistaFactura = new VistaFacturaEmpresa(controladorFactura);
+
+
+    public VistaMenu(ControladorCliente controladorCliente,ControladorProvedor controladorProvedor,ControladorTecnico controladorTecnico,ControladorServicio controladorServicio){
+
+        this.controladorCliente = controladorCliente;
+        this.vistaCliente = new VistaCliente(this.controladorCliente); 
+
+        this.controladorProvedor = controladorProvedor;
+        this.vistaProvedor = new VistaProvedor(this.controladorProvedor);
+
+        this.controladorTecnico = controladorTecnico;
+        this.vistaTecnico = new VistaTecnico(this.controladorTecnico);
+
+        this.controladorServicio = controladorServicio;
+        this.vistaServicio = new VistaServicio(this.controladorServicio);
+
+        this.vistaOrdenServicio = new VistaOrdenServicio(this.controladorOrdenes, this.controladorCliente, this.controladorServicio, this.controladorTecnico);
+
+    }
 
    
     
@@ -48,7 +81,7 @@ public class VistaMenu {
                     vistaTecnico.mostrarmenuTecnicos();
                     break;
                 case 4:
-                    new VistaServicio().mostrarmenuServicios();
+                    vistaServicio.mostrarmenuServicios();
                     break;
                 case 5:
                     vistaOrdenServicio.generarOrden();

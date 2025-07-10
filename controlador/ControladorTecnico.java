@@ -5,8 +5,8 @@ import modelo.Tecnico;
 
 public class ControladorTecnico {
 ArrayList<Tecnico>lista;
-    public ControladorTecnico(){
-        lista = new ArrayList<>();
+    public ControladorTecnico(ArrayList<Tecnico>lista){
+        this.lista = lista;
     }
 
     public String agregarTecnico(Tecnico tecnico){

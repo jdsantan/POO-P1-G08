@@ -5,12 +5,17 @@ import java.util.Scanner;
 import modelo.Servicio;
 
 public class VistaServicio {
+    Scanner sc = new Scanner(System.in);
+    ControladorServicio controladorServicio;
+    public VistaServicio(ControladorServicio controladorServicio){
+        this.controladorServicio = controladorServicio;
+
+    }
+
      public void mostrarmenuServicios() {
         int opcion;
-        Scanner sc = new Scanner(System.in);
-        ControladorServicio controlador = new ControladorServicio();
        do {
-            ArrayList<Servicio> lista = controlador.getListaServicios();
+            ArrayList<Servicio> lista = controladorServicio.getListaServicios();
             if (lista.isEmpty()) {
                 System.out.println("\n>> No hay servicios registrados.");
             } else {
@@ -51,26 +56,23 @@ public class VistaServicio {
     
     }
  public void agregarServicio(){
-        Scanner sc = new Scanner(System.in);
-        ControladorServicio controlador = new ControladorServicio();
+
         System.out.print("Nombre del servicio: ");
         String nombre = sc.nextLine();
         System.out.print("Precio inicial: ");
         double precio = sc.nextDouble();
         sc.nextLine();
-        String mensaje = controlador.agregarServicio(nombre, precio);
+        String mensaje = controladorServicio.agregarServicio(nombre, precio);
         System.out.println(mensaje);
         sc.close();
     }
     public void editarServicio(){
-        Scanner sc = new Scanner(System.in);
-        ControladorServicio controlador = new ControladorServicio();
         System.out.print("Código del servicio a editar: ");
         String codigo = sc.nextLine();
         System.out.print("Nuevo precio: ");
         double nuevoPrecio = sc.nextDouble();
         sc.nextLine();
-        String mensaje = controlador.editarPrecio(codigo, nuevoPrecio);
+        String mensaje = controladorServicio.editarPrecio(codigo, nuevoPrecio);
         System.out.println(mensaje);
         sc.close();
     }

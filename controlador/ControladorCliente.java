@@ -6,8 +6,9 @@ import modelo.Cliente;
 
 public class ControladorCliente {
     private ArrayList<Cliente> listaCliente;
-    public ControladorCliente(){
-        listaCliente = new ArrayList<>();
+    
+    public ControladorCliente(ArrayList<Cliente> listaInicialClientes){ // Se recibe la lista
+        this.listaCliente = listaInicialClientes; // Se asigna la lista recibida
     }
 
 
