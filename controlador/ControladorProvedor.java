@@ -12,7 +12,7 @@ public class ControladorProvedor {
     public String agregarProvedor(Provedor provedor){
         for(Provedor i : lista){
             if(i.getId().equalsIgnoreCase(provedor.getId())){
-                return "Cliente ya existe";
+                return "Provedor ya existe";
             }
         }
         lista.add(provedor);

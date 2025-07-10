@@ -11,7 +11,7 @@ public class ControladorMenu {
     ArrayList<Servicio> listaServicios = new ArrayList<>();
     ArrayList<Cliente> listaClientes = new ArrayList<>();
     ArrayList<Provedor> listaProvedores = new ArrayList<>();
-public void Incializar() {
+    public void Incializar() {
     listaTecnicos.add(new Tecnico("0928497973","Juan Santana","0981124061","Mecánico"));
     listaTecnicos.add(new Tecnico("0928497974","Pedro Pérez","0981124062","Electricista"));
 
@@ -29,10 +29,10 @@ public void Incializar() {
     listaClientes.add(new Cliente("C002", "Ana Gómez", "0987654322", "Av. Siempre Viva 456", true));
     listaClientes.add(new Cliente("C003", "Luis Rodríguez", "0987654323", "Calle Falsa 789", false));
     listaClientes.add(new Cliente("C004", "María López", "0987654324", "Calle Real 101", true));
-
+    
   
-}
-public ArrayList<Tecnico> getListaTecnicos() {
+    }
+    public ArrayList<Tecnico> getListaTecnicos() {
         return listaTecnicos;
     }
 

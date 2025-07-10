@@ -43,7 +43,6 @@ public class VistaProvedor {
         String nombre = sc.nextLine();
         System.out.println("Ingrese el telefono del provedor: ");
         String telefono = sc.nextLine();
-        sc.nextLine();
         System.out.println("Ingrese la descripcion del provedor: ");
         String descripcion = sc.nextLine();
         

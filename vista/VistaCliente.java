@@ -18,6 +18,7 @@ public class VistaCliente {
             System.out.println("2. Regresar al menu Principal");
             System.out.print("Seleccione una opción: ");
             opcion = sc.nextInt();
+            sc.nextLine();
             switch (opcion) {
                 case 1:
                     agregarCliente();
@@ -43,10 +44,9 @@ public class VistaCliente {
         String direccion = sc.nextLine();
         System.out.println("Ingrese el telefono del cliente: ");
         String telefono = sc.nextLine();
-        sc.nextLine();
         System.out.println("El cliente es premiun? (true/false) : ");
-
         boolean tipoCliente = sc.nextBoolean();
+        sc.nextLine();
         Cliente c1 = new Cliente(id,nombre,telefono,direccion,tipoCliente);
 
         String mensaje = controlador.agregarCliente(c1);

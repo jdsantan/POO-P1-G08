@@ -15,8 +15,8 @@ import java.time.LocalDate;
 public class VistaOrdenServicio {
     private ControladorOrdenes controladorOrdenes;
     private ControladorCliente controladorCliente = new ControladorCliente();
-    private ControladorServicio controladorServicio;
-    private ControladorTecnico controladorTecnico;
+    private ControladorServicio controladorServicio = new ControladorServicio();
+    private ControladorTecnico controladorTecnico = new ControladorTecnico();
     public VistaOrdenServicio(ControladorOrdenes controladorOrdenes){
         this.controladorOrdenes = controladorOrdenes;
     }
