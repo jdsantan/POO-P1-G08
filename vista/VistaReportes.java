@@ -1,11 +1,8 @@
 package vista;
 
+import java.util.*;
 import modelo.*;
 import controlador.ControladorOrdenes;
-
-import java.util.*;
-import java.time.LocalDate;
-import java.util.stream.Collectors;
 
 public class VistaReportes {
     private ControladorOrdenes controladorOrdenes;
