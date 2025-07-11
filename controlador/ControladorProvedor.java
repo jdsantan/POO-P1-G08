@@ -4,27 +4,27 @@ import java.util.ArrayList;
 import modelo.Provedor;
 
 public class ControladorProvedor {
-    ArrayList<Provedor>lista;
-    public ControladorProvedor(ArrayList<Provedor>lista){
-        this.lista = lista;
+    private ArrayList<Provedor> listaProvedores;
+    public ControladorProvedor(){
+        listaProvedores = new ArrayList<>();
     }
 
     public String agregarProvedor(Provedor provedor){
-        for(Provedor i : lista){
+        for(Provedor i : listaProvedores){
             if(i.getId().equalsIgnoreCase(provedor.getId())){
                 System.out.println(i);
                 return "Provedor ya existe";
             }
         }
-        lista.add(provedor);
-        for(Provedor p: lista){
+        listaProvedores.add(provedor);
+        for(Provedor p: listaProvedores){
             System.out.println(p);
         }
         return "Provedor agregado satisfactoriamente";
     }
     
     public ArrayList<Provedor> getListaProvedores(){
-        return lista;
+        return listaProvedores;
     }
 
     public boolean crearOrden(){
