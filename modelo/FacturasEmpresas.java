@@ -2,7 +2,7 @@ package modelo;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class FacturasEmpresas {
+public class FacturasEmpresas   {
 private String codigoEmpresa;
 private ClienteEmpresarial cliente;
 private LocalDate fechaFacturacion;

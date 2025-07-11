@@ -19,9 +19,8 @@ public class ControladorFacturaEmpresa {
     
     private void inicializarClientesEmpresariales() {
         // Agregar algunos clientes empresariales de ejemplo
-        listaClientesEmpresariales.add(new ClienteEmpresarial(true, "Grupo HG S.A", "EMP001"));
-        listaClientesEmpresariales.add(new ClienteEmpresarial(true, "Transportes Unidos", "EMP002"));
-        listaClientesEmpresariales.add(new ClienteEmpresarial(true, "LogiCorp S.A", "EMP003"));
+        listaClientesEmpresariales.add(new ClienteEmpresarial("C004", "María López", "0987654324", "Calle Real 101",true, "Grupo HG S.A", "EMP001"));
+        listaClientesEmpresariales.add(new ClienteEmpresarial("C002", "Ana Gómez", "0987654322", "Av. Siempre Viva 456",true, "Transportes Unidos", "EMP002"));
     }
     
     public ClienteEmpresarial buscarClienteEmpresarial(String codigoEmpresa) {

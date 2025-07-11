@@ -64,7 +64,7 @@ public class VistaServicio {
         sc.nextLine();
         String mensaje = controladorServicio.agregarServicio(nombre, precio);
         System.out.println(mensaje);
-        sc.close();
+        
     }
     public void editarServicio(){
         System.out.print("Código del servicio a editar: ");
@@ -74,6 +74,6 @@ public class VistaServicio {
         sc.nextLine();
         String mensaje = controladorServicio.editarPrecio(codigo, nuevoPrecio);
         System.out.println(mensaje);
-        sc.close();
+        
     }
 }

@@ -2,25 +2,18 @@ package modelo;
 import java.util.ArrayList;
 
 
-public class ClienteEmpresarial   {
+public class ClienteEmpresarial extends Cliente  {
  ArrayList<Detalledelservicio> lista;
- private Boolean esEmpresa;
  private String nombreEmpresa;
  private String codigoEmpresa;
 
-    public ClienteEmpresarial(Boolean esEmpresa,String nombreEmpresa, String codigoEmpresa) {
+    public ClienteEmpresarial(String id, String nombre, String telefono, String direccion, Boolean tipoCliente, String nombreEmpresa, String codigoEmpresa) {
+        super(id, nombre, telefono, direccion, true);
         this.nombreEmpresa = nombreEmpresa;
         this.codigoEmpresa = codigoEmpresa;
-        this.esEmpresa = esEmpresa;
         this.lista = new ArrayList<>();
     }
 
-    public Boolean getEsEmpresa() {
-        return esEmpresa;
-    }
-    public void setEsEmpresa(Boolean esEmpresa) {
-        this.esEmpresa = esEmpresa;
-    }
     public  ArrayList<Detalledelservicio> getLista() {
         return lista;
     }
@@ -44,6 +37,6 @@ public String getCodigoEmpresa() {
 
     @Override
     public String toString() {
-        return "ClienteEmpresarial [esEmpresa=" + esEmpresa + ", nombreEmpresa=" + nombreEmpresa + ", codigoEmpresa=" + codigoEmpresa + "]";
+        return "ClienteEmpresarial [esEmpresa=" + getTipoCliente() + ", nombreEmpresa=" + nombreEmpresa + ", codigoEmpresa=" + codigoEmpresa + "]";
     }
 }

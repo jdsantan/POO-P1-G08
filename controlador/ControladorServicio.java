@@ -14,6 +14,7 @@ public class ControladorServicio {
             if(i.getNombre().equalsIgnoreCase(nombre)){
                 return "Servicio ya existe";
             }
+        }
          String nuevoCodigo;
         if (lista.isEmpty()) {
             nuevoCodigo = "S001";
@@ -26,7 +27,7 @@ public class ControladorServicio {
 
         Servicio nuevo = new Servicio(nuevoCodigo, nombre, precio);
         lista.add(nuevo);
-    }
+
         return "Servicio agregado satisfactoriamente";
     }
     public String editarPrecio(String codigo, double nuevoPrecio) {
