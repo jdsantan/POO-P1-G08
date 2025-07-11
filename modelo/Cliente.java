@@ -1,32 +1,12 @@
 package modelo;
 
-public class Cliente {
-    private String id,nombre,direccion;
-    private String telefono;
-    Boolean tipoCliente;
+public class Cliente extends Persona{
+    private String direccion;
+    private Boolean tipoCliente;
     public Cliente(String id, String nombre, String telefono, String direccion, Boolean tipoCliente){
-        this.id = id;
-        this.nombre= nombre;
-        this.telefono = telefono;
+        super(id,nombre,telefono);
         this.direccion = direccion;
         this.tipoCliente = tipoCliente;
-        
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
     }
 
     public String getDireccion() {
@@ -44,18 +24,10 @@ public class Cliente {
     public void setTipoCliente(Boolean  tipoCliente) {
         this.tipoCliente = tipoCliente;
     }
-    public String getTelefono(){
-        return telefono;
-    }
-
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
-    }
 
     @Override
     public String toString() {
-        return "Cliente [id=" + id + ", nombre=" + nombre + ", direccion=" + direccion + ", telefono=" + telefono
-                + ", tipoCliente=" + tipoCliente + "]";
+        return "Cliente: "+ super.toString() +", Direccion: " + direccion +  ", Es Cliente empreserial: "+ tipoCliente;
     }
 
   

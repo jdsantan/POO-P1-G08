@@ -3,26 +3,34 @@ package controlador;
 import java.util.ArrayList;
 
 import modelo.Cliente;
+import modelo.Persona;
 
 public class ControladorCliente {
-    private ArrayList<Cliente> listaCliente;
+    private ArrayList<Persona> lista;
     
-    public ControladorCliente(ArrayList<Cliente> listaInicialClientes){ // Se recibe la lista
-        this.listaCliente = listaInicialClientes; // Se asigna la lista recibida
+    public ControladorCliente(ArrayList<Persona> lista){ // Se recibe la lista
+        this.lista = lista; // Se asigna la lista recibida
     }
 
 
     public String agregarCliente(Cliente CLnuevo){
-        for(Cliente a : listaCliente){
-            if(a.getId().equalsIgnoreCase(CLnuevo.getId())){
-                System.out.println(a);
+        for(Persona p : lista){
+            if(p instanceof Cliente){
+                Cliente c = (Cliente)p;
+                if(c.getId().equalsIgnoreCase(CLnuevo.getId())){
+                System.out.println(c);
                 return "Usuario ya existe";
+                }
             }
         }
-        listaCliente.add(CLnuevo);
+        lista.add(CLnuevo);
         
-        for(Cliente c1: listaCliente){
-            System.out.println(c1);
+        for(Persona p: lista){
+            if(p instanceof Cliente){
+                Cliente c1 = (Cliente)p;
+                System.out.println(c1);
+            }
+
         }
         return "Cliente agregado satisfactoriamente";
 
@@ -30,9 +38,12 @@ public class ControladorCliente {
 
 
     public Cliente buscarCliente(String id){
-        for(Cliente c: listaCliente){
-            if(id.equalsIgnoreCase(c.getId())){
+        for(Persona p: lista){
+            if(p instanceof Cliente){
+                Cliente c = (Cliente)p;
+                if(id.equalsIgnoreCase(c.getId())){
                 return c;
+                }
             }
         }
         return null;

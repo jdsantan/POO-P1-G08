@@ -2,6 +2,8 @@ package vista;
 import controlador.ControladorTecnico;
 import java.util.ArrayList;
 import java.util.Scanner;
+
+import modelo.Persona;
 import modelo.Tecnico;
 
 public class VistaTecnico {
@@ -16,15 +18,18 @@ public class VistaTecnico {
     public void mostrarmenuTecnicos() {
         int opcion;
         do {
-            ArrayList<Tecnico> lista = ctrl.getListaTecnicos();
+            ArrayList<Persona> lista = ctrl.getListaTecnicos();
             if (lista.isEmpty()) {
                 System.out.println("\n>> No hay técnicos registrados.");
             } else {
                 System.out.println("\n>> Técnicos registrados:");
-                for (Tecnico t : lista) {
-                    System.out.printf("   %s | %s | %s | %s%n",
-                        t.getCedula(), t.getNombre(),
+                for (Persona p : lista) {
+                    if(p instanceof Tecnico){
+                        Tecnico t = (Tecnico)p;
+                        System.out.printf("   %s | %s | %s | %s%n",
+                        t.getId(), t.getNombre(),
                         t.getTelefono(), t.getEspecialidad());
+                    }
                 }
             }
 
