@@ -14,7 +14,7 @@ public class Main {
         controladorMenu.Incializar();
 
         ControladorCliente controladorCliente = new ControladorCliente(controladorMenu.getListaClientes());
-        ControladorProvedor controladorProvedor = new ControladorProvedor(controladorMenu.getListaProvedores());
+        ControladorProvedor controladorProvedor = new ControladorProvedor();
         ControladorTecnico controladorTecnico = new ControladorTecnico(controladorMenu.getListaTecnicos());
         ControladorServicio controladorServicio = new ControladorServicio(controladorMenu.getListaServicios());
 
