@@ -10,7 +10,7 @@ public class VistaMenu {
     public ControladorCliente controladorCliente;
     public VistaCliente vistaCliente;
 
-    public ControladorProvedor controladorProvedor;
+    public ControladorProvedor controladorProvedor = new ControladorProvedor();
     public VistaProvedor vistaProvedor;
 
     public ControladorTecnico controladorTecnico;
