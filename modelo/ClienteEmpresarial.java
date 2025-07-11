@@ -14,6 +14,7 @@ public class ClienteEmpresarial extends Cliente  {
         this.lista = new ArrayList<>();
     }
 
+
     public  ArrayList<Detalledelservicio> getLista() {
         return lista;
     }

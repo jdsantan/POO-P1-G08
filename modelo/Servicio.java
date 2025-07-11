@@ -1,23 +1,28 @@
 package modelo;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Servicio {
     private String codigo, nombre;
     private double precio;
-    private ArrayList<Double> historialPrecios = new ArrayList<>();
+    private ArrayList<HistorialPrecio> historialPrecios = new ArrayList<>();
 
     public Servicio(String codigo, String nombre, double precioInicial) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.precio = precioInicial;
-        historialPrecios.add(precioInicial);
+         this.historialPrecios = new ArrayList<>();
+        this.historialPrecios.add(new HistorialPrecio(precioInicial, LocalDate.now(), null));
     }
-   
+    
     public void setPrecio(double nuevoPrecio) {
-        historialPrecios.add(nuevoPrecio);
+         if (!historialPrecios.isEmpty()) {
+            historialPrecios.get(historialPrecios.size() - 1).setFechaFin(LocalDate.now());
+        }
+        historialPrecios.add(new HistorialPrecio(nuevoPrecio, LocalDate.now(), null));
         this.precio = nuevoPrecio;
     }
-    public ArrayList<Double> getHistorialPrecios() {
+    public ArrayList<HistorialPrecio> getHistorialPrecios() {
         return historialPrecios;
     }
     

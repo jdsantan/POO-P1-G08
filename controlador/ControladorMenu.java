@@ -1,6 +1,7 @@
 package controlador;
 import java.util.ArrayList;
 import modelo.Cliente;
+import modelo.ClienteEmpresarial;
 import modelo.Persona;
 import modelo.Provedor;
 import modelo.Servicio;
@@ -29,9 +30,9 @@ public class ControladorMenu {
     listaPersonas.add(new Provedor("POO2","Pirelli","0974558","Proveedor de llantas"));
 
     listaPersonas.add(new Cliente("C001", "Carlos Pérez", "0987654321", "Florida 123", false));
-    listaPersonas.add(new Cliente("C002", "Ana Gómez", "0987654322", "Av. Siempre Viva 456", true));
+    listaPersonas.add(new ClienteEmpresarial("C002", "Ana Gómez", "0987654322", "Av. Siempre Viva 456", true,"Nankang","E001"));
     listaPersonas.add(new Cliente("C003", "Luis Rodríguez", "0987654323", "Calle Falsa 789", false));
-    listaPersonas.add(new Cliente("C004", "María López", "0987654324", "Calle Real 101", true));
+    listaPersonas.add(new ClienteEmpresarial("C004", "María López", "0987654324", "Calle Real 101", true,"MOTORS","E002"));
 
 
 
@@ -62,14 +63,14 @@ public class ControladorMenu {
     }
 
 
-
+    */}
     public ArrayList<Cliente> getListaClientes() {
         return listaClientes;
     }
 
     public ArrayList<Provedor> getListaProvedores() {
         return listaProvedores;    
-         */
+         
 }
  
  public ArrayList<Persona> getListaPersonas(){
