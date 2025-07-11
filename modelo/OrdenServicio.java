@@ -32,7 +32,7 @@ public class OrdenServicio {
     public void agregarDetalle(Servicio servicio, int cantidad) {
         Detalledelservicio ds = new Detalledelservicio(servicio,cantidad);
         detalle.add(ds);
-        total += servicio.getPrecio();
+        total += (servicio.getPrecio())*cantidad;
     }
 
 

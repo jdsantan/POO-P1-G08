@@ -16,6 +16,7 @@ ArrayList<Tecnico>lista;
             }
         }
         lista.add(tecnico);
+        
         return "Tecnico agregado satisfactoriamente";
     }
 

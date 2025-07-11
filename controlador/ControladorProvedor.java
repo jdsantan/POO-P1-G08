@@ -12,10 +12,14 @@ public class ControladorProvedor {
     public String agregarProvedor(Provedor provedor){
         for(Provedor i : lista){
             if(i.getId().equalsIgnoreCase(provedor.getId())){
+                System.out.println(i);
                 return "Provedor ya existe";
             }
         }
         lista.add(provedor);
+        for(Provedor p: lista){
+            System.out.println(p);
+        }
         return "Provedor agregado satisfactoriamente";
     }
     
