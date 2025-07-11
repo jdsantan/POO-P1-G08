@@ -17,9 +17,10 @@ public class Main {
         ControladorProvedor controladorProvedor = new ControladorProvedor(controladorMenu.getListaPersonas());
         ControladorTecnico controladorTecnico = new ControladorTecnico(controladorMenu.getListaPersonas());
         ControladorServicio controladorServicio = new ControladorServicio(controladorMenu.getListaServicios());
+        VistaInsumo vistaInsumo = new VistaInsumo(controladorProvedor);
 
 
-        VistaMenu vistaMenu = new VistaMenu(controladorCliente,controladorProvedor,controladorTecnico,controladorServicio);
+        VistaMenu vistaMenu = new VistaMenu(controladorCliente,controladorProvedor,controladorTecnico,controladorServicio,vistaInsumo);
         vistaMenu.mostrarMenuPrincipal();
         
     }

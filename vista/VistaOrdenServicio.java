@@ -44,7 +44,7 @@ public class VistaOrdenServicio {
         System.out.println("Ingrese la placa del vehiculo: ");
         placa= sc.nextLine();
         
-        System.out.println("Ingrese el tipo de vehiculo 1.Automovil /n 2. Motocicletas /n 3. Bus: ");
+        System.out.println("Ingrese el tipo de vehiculo \n 1.Automovil \n 2. Motocicletas \n 3. Bus: ");
         tipVehiculo= sc.nextLine().toUpperCase();
 
         System.out.println("Ingrese la fecha del servicio (Formato YYYY-MM-DD): ");
