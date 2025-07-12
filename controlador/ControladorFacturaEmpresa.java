@@ -6,9 +6,9 @@ import modelo.OrdenServicio;
 
 public class ControladorFacturaEmpresa {
     private ControladorCliente controladorCliente;
-    private ControladorOrdenes controladorOrdenes;
+    private ControladorOrden controladorOrdenes;
 
-    public ControladorFacturaEmpresa(ControladorCliente controladorCliente, ControladorOrdenes controladorOrdenes) {
+    public ControladorFacturaEmpresa(ControladorCliente controladorCliente, ControladorOrden controladorOrdenes) {
         this.controladorCliente = controladorCliente;
         this.controladorOrdenes = controladorOrdenes;
     }

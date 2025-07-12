@@ -1,6 +1,6 @@
 package vista;
 import controlador.ControladorCliente;
-import controlador.ControladorOrdenes;
+import controlador.ControladorOrden;
 import controlador.ControladorServicio;
 import controlador.ControladorTecnico;
 import java.time.LocalDate;
@@ -11,11 +11,11 @@ import modelo.Servicio;
 import modelo.Tecnico;
 import modelo.Vehiculo;
 public class VistaOrdenServicio {
-    private ControladorOrdenes controladorOrdenes;
+    private ControladorOrden controladorOrdenes;
     private ControladorCliente controladorCliente;
     private ControladorServicio controladorServicio;
     private ControladorTecnico controladorTecnico;
-    public VistaOrdenServicio(ControladorOrdenes controladorOrdenes,ControladorCliente controladorCliente,ControladorServicio controladorServicio,ControladorTecnico controladorTecnico){
+    public VistaOrdenServicio(ControladorOrden controladorOrdenes,ControladorCliente controladorCliente,ControladorServicio controladorServicio,ControladorTecnico controladorTecnico){
         this.controladorOrdenes = controladorOrdenes;
         this.controladorCliente = controladorCliente;
         this.controladorServicio = controladorServicio;

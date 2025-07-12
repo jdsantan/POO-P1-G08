@@ -1,14 +1,14 @@
 package vista;
 
+import controlador.ControladorOrden;
 import java.util.*;
 import modelo.*;
-import controlador.ControladorOrdenes;
 
-public class VistaReportes {
-    private ControladorOrdenes controladorOrdenes;
+public class VistaReporte {
+    private ControladorOrden controladorOrdenes;
     private Scanner scanner;
 
-    public VistaReportes(ControladorOrdenes controladorOrdenes) {
+    public VistaReporte(ControladorOrden controladorOrdenes) {
         this.controladorOrdenes = controladorOrdenes;
         this.scanner = new Scanner(System.in);
     }

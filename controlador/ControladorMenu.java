@@ -1,12 +1,14 @@
 package controlador;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import modelo.Cliente;
 import modelo.ClienteEmpresarial;
+import modelo.OrdenServicio;
 import modelo.Persona;
 import modelo.Provedor;
 import modelo.Servicio;
 import modelo.Tecnico;
-
+import modelo.Vehiculo;
 
 public class ControladorMenu {
     ArrayList<Tecnico> listaTecnicos;
@@ -14,6 +16,7 @@ public class ControladorMenu {
     ArrayList<Cliente> listaClientes;
     ArrayList<Provedor> listaProvedores;
     ArrayList<Persona> listaPersonas;
+    ArrayList<OrdenServicio> listaOrdenes;
 
     public ControladorMenu(){
         listaClientes = new ArrayList<>();
@@ -21,6 +24,7 @@ public class ControladorMenu {
         listaServicios = new ArrayList<>();
         listaProvedores = new ArrayList<>();
         listaPersonas = new ArrayList<>();
+        listaOrdenes = new ArrayList<>();
     }
     public void Incializar() {
 
@@ -43,13 +47,30 @@ public class ControladorMenu {
     listaServicios.add(new Servicio("S004", "Alineación y balanceo", 40.00));
     listaServicios.add(new Servicio("S005", "Reparación de motor", 100.00));
     listaServicios.add(new Servicio("S006", "Cambio de amortiguadores", 80.00));
+    listaOrdenes.add(new OrdenServicio((Cliente) listaPersonas.get(7), new Vehiculo("V001", Vehiculo.TipoVehiculo.AUTOMOVIL), (Tecnico) listaPersonas.get(0), LocalDate.parse("2025-01-01")));
+    listaOrdenes.add(new OrdenServicio((Cliente) listaPersonas.get(4), new Vehiculo("V002", Vehiculo.TipoVehiculo.AUTOMOVIL), (Tecnico) listaPersonas.get(0), LocalDate.parse("2025-01-02")));
+    listaOrdenes.add(new OrdenServicio((Cliente) listaPersonas.get(5), new Vehiculo("V003", Vehiculo.TipoVehiculo.MOTOCICLETA), (Tecnico) listaPersonas.get(1), LocalDate.parse("2025-01-03")));
+    listaOrdenes.add(new OrdenServicio((Cliente) listaPersonas.get(6), new Vehiculo("V004", Vehiculo.TipoVehiculo.BUS), (Tecnico) listaPersonas.get(1), LocalDate.parse("2025-01-04")));
+    
+    OrdenServicio orden = listaOrdenes.get(0);
+    OrdenServicio orden1 = listaOrdenes.get(1);
+    OrdenServicio orden2 = listaOrdenes.get(2);
+    OrdenServicio orden3 = listaOrdenes.get(3);
 
+    orden.agregarDetalle(listaServicios.get(0), 2);
+    orden1.agregarDetalle(listaServicios.get(1), 1);
+    orden2.agregarDetalle(listaServicios.get(2), 1);
+    orden3.agregarDetalle(listaServicios.get(3), 1);
+    orden.agregarDetalle(listaServicios.get(1), 2);
+    orden1.agregarDetalle(listaServicios.get(2), 1);
+    orden2.agregarDetalle(listaServicios.get(3), 1);
+    orden3.agregarDetalle(listaServicios.get(4), 1);
 
     /* 
     listaTecnicos.add(new Tecnico("0928497973","Juan Santana","0981124061","Mecánico"));
     listaTecnicos.add(new Tecnico("0928497974","Pedro Pérez","0981124062","Electricista"));
 
-    listaProvedores.add(new Provedor("POO1","Nankang","0974557","Proveedor de baterias"));
+    listaProvedores.add(new Provedor("POO1","Nankang","0974557","Proveedor de baterias"));o
     listaProvedores.add(new Provedor("POO2","Pirelli","0974558","Proveedor de llantas"));
 
     listaClientes.add(new Cliente("C001", "Carlos Pérez", "0987654321", "Florida 123", false));
@@ -64,11 +85,12 @@ public class ControladorMenu {
     }
 
 
-    */}
+    }
     public ArrayList<Cliente> getListaClientes() {
         return listaClientes;
     }
-
+*/
+    }
     public ArrayList<Provedor> getListaProvedores() {
         return listaProvedores;    
          

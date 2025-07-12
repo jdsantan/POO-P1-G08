@@ -4,7 +4,7 @@ package vista;
 import controlador.ControladorCliente;
 import controlador.ControladorFacturaEmpresa;
 import controlador.ControladorMenu;
-import controlador.ControladorOrdenes;
+import controlador.ControladorOrden;
 import controlador.ControladorProvedor;
 import controlador.ControladorServicio;
 import controlador.ControladorTecnico;
@@ -19,8 +19,8 @@ public class Main {
         ControladorProvedor controladorProvedor = new ControladorProvedor(controladorMenu.getListaPersonas());
         ControladorTecnico controladorTecnico = new ControladorTecnico(controladorMenu.getListaPersonas());
         ControladorServicio controladorServicio = new ControladorServicio(controladorMenu.getListaServicios());
-        ControladorOrdenes controladorOrdenes = new ControladorOrdenes();
-        ControladorFacturaEmpresa controladorFacturaEmpresa = new ControladorFacturaEmpresa(controladorCliente, controladorOrdenes);
+        ControladorOrden controladorOrden = new ControladorOrden();
+        ControladorFacturaEmpresa controladorFacturaEmpresa = new ControladorFacturaEmpresa(controladorCliente, controladorOrden);
         VistaInsumo vistaInsumo = new VistaInsumo(controladorProvedor);
 
 

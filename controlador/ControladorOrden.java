@@ -1,30 +1,29 @@
 package controlador;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
 import modelo.Cliente;
 import modelo.OrdenServicio;
 import modelo.Tecnico;
 import modelo.Vehiculo;
 
-import java.time.LocalDate;
-import java.util.ArrayList;
+public class ControladorOrden {
+    private ArrayList<OrdenServicio> listaOrden;
 
-public class ControladorOrdenes {
-    private ArrayList<OrdenServicio> listaOrdenes;
-
-    public ControladorOrdenes() {
-        listaOrdenes = new ArrayList<>();
+    public ControladorOrden() {
+        listaOrden = new ArrayList<>();
     }
     public OrdenServicio crearOrden(Cliente cliente, Vehiculo vehiculo,LocalDate fecha,Tecnico tecnico){
         OrdenServicio nueva = new OrdenServicio(cliente,vehiculo,tecnico,fecha);
-        listaOrdenes.add(nueva);
+        listaOrden.add(nueva);
         return nueva;
     }
     public void mostrarTodasOrdenes(){
-        for(OrdenServicio o : listaOrdenes){
+        for(OrdenServicio o : listaOrden){
             System.out.println(o);
         }
     }
     public ArrayList<OrdenServicio> getListaOrdenes(){
-        return listaOrdenes;
+        return listaOrden;
     }
 }

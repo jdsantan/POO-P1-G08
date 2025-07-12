@@ -2,7 +2,7 @@ package modelo;
 
 public class Vehiculo {
     public enum TipoVehiculo{
-        AUTOMOVIL,MOTOCICLETAS,BUS
+        AUTOMOVIL,MOTOCICLETA,BUS
     }
 
     private String placa;
