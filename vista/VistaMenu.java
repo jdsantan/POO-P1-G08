@@ -23,19 +23,19 @@ public class VistaMenu {
     private VistaFacturaEmpresa     vistaFactura;   
  
 
-    public ControladorOrden controladorOrden = new ControladorOrden();
+    public ControladorOrden controladorOrden;
     public VistaOrdenServicio vistaOrdenServicio;
 
 
-    public VistaInsumo vistaInsumo = new VistaInsumo(controladorProvedor);
+    public VistaInsumo vistaInsumo ;
 
-    public VistaReporte vistaReportes = new VistaReporte(controladorOrden);
-
-
+    public VistaReporte vistaReportes ;
 
 
 
-    public VistaMenu(ControladorCliente controladorCliente,ControladorProvedor controladorProvedor,ControladorTecnico controladorTecnico,ControladorServicio controladorServicio,VistaInsumo vistaInsumo){
+
+
+    public VistaMenu(ControladorCliente controladorCliente,ControladorProvedor controladorProvedor,ControladorTecnico controladorTecnico,ControladorServicio controladorServicio,VistaInsumo vistaInsumo, ControladorFacturaEmpresa controladorFacturaEmpresa,ControladorOrden controladorOrden) {
 
         this.controladorCliente = controladorCliente;
         this.vistaCliente = new VistaCliente(this.controladorCliente); 
@@ -45,6 +45,7 @@ public class VistaMenu {
 
         this.controladorTecnico = controladorTecnico;
         this.vistaTecnico = new VistaTecnico(this.controladorTecnico);
+        this.controladorOrden = controladorOrden;
 
         this.controladorServicio = controladorServicio;
         this.vistaServicio = new VistaServicio(this.controladorServicio);
@@ -56,7 +57,9 @@ public class VistaMenu {
                                       this.controladorCliente,
                                       this.controladorOrden);
         this.vistaFactura       = new VistaFacturaEmpresa(this.controladorFactura);
+    this.vistaReportes = new VistaReporte(this.controladorOrden);
     
+        
     }
 
     

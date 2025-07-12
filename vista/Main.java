@@ -22,10 +22,11 @@ public class Main {
         ControladorOrden controladorOrden = new ControladorOrden(controladorMenu.getOrdenServicios());
         ControladorFacturaEmpresa controladorFacturaEmpresa = new ControladorFacturaEmpresa(controladorCliente, controladorOrden);
         VistaInsumo vistaInsumo = new VistaInsumo(controladorProvedor);
+       
 
 
 
-        VistaMenu vistaMenu = new VistaMenu(controladorCliente,controladorProvedor,controladorTecnico,controladorServicio,vistaInsumo, controladorFacturaEmpresa);
+        VistaMenu vistaMenu = new VistaMenu(controladorCliente,controladorProvedor,controladorTecnico,controladorServicio,vistaInsumo, controladorFacturaEmpresa,controladorOrden);
         vistaMenu.mostrarMenuPrincipal();
         
     }
