@@ -15,7 +15,7 @@ public class ControladorTecnico {
         for(Persona p : lista){
             if(p instanceof Tecnico){
                 Tecnico i = (Tecnico)p;
-                if(i.getNombre().equalsIgnoreCase(tecnico.getNombre())){
+                if(i.getId().equalsIgnoreCase(tecnico.getId())){
                 return "Tecnico ya existe";
                 }
             }

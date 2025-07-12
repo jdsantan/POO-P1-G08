@@ -53,8 +53,8 @@ public class VistaTecnico {
                     String tel = sc.nextLine();
                     System.out.print("Especialidad: ");
                     String esp = sc.nextLine();
-                    String msgAg = ctrl.agregarTecnico(
-                        new Tecnico(ced, nom, tel, esp));
+                    Tecnico t = new Tecnico(ced, nom, tel, esp);
+                    String msgAg = ctrl.agregarTecnico(t);
                     System.out.println(">> " + msgAg);
                     break;
 

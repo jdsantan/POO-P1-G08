@@ -56,13 +56,14 @@ public class VistaServicio {
     
     }
  public void agregarServicio(){
-
+        System.out.println("Codigo de Servicio");
+        String codigo = sc.nextLine();
         System.out.print("Nombre del servicio: ");
         String nombre = sc.nextLine();
         System.out.print("Precio inicial: ");
         double precio = sc.nextDouble();
         sc.nextLine();
-        String mensaje = controladorServicio.agregarServicio(nombre, precio);
+        String mensaje = controladorServicio.agregarServicio(codigo,nombre, precio);
         System.out.println(mensaje);
         
     }

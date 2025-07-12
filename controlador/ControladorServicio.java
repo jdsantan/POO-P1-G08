@@ -9,9 +9,9 @@ public class ControladorServicio {
         this.lista = lista;
     }
 
-    public String agregarServicio(String nombre,double precio){
+    public String agregarServicio(String codigo,String nombre,double precio){
         for(Servicio i : lista){
-            if(i.getNombre().equalsIgnoreCase(nombre)){
+            if(i.getCodigo().equalsIgnoreCase(codigo)){
                 return "Servicio ya existe";
             }
         }
@@ -25,7 +25,7 @@ public class ControladorServicio {
             nuevoCodigo = String.format("S%03d", numero);  
         }
 
-        Servicio nuevo = new Servicio(nuevoCodigo, nombre, precio);
+        Servicio nuevo = new Servicio(nuevoCodigo, codigo, precio);
         lista.add(nuevo);
 
         return "Servicio agregado satisfactoriamente";
