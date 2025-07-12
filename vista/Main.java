@@ -25,7 +25,7 @@ public class Main {
 
 
 
-        VistaMenu vistaMenu = new VistaMenu(controladorCliente,controladorProvedor,controladorTecnico,controladorServicio,vistaInsumo,controladorFacturaEmpresa);
+        VistaMenu vistaMenu = new VistaMenu(controladorCliente,controladorProvedor,controladorTecnico,controladorServicio,vistaInsumo);
         vistaMenu.mostrarMenuPrincipal();
         
     }

@@ -14,6 +14,7 @@ public class ControladorMenu {
     ArrayList<Cliente> listaClientes;
     ArrayList<Provedor> listaProvedores;
     ArrayList<Persona> listaPersonas;
+
     public ControladorMenu(){
         listaClientes = new ArrayList<>();
         listaTecnicos = new ArrayList<>();

@@ -1,17 +1,15 @@
 package vista;
+import controlador.ControladorCliente;
+import controlador.ControladorOrdenes;
+import controlador.ControladorServicio;
+import controlador.ControladorTecnico;
+import java.time.LocalDate;
 import java.util.Scanner;
-
 import modelo.Cliente;
 import modelo.OrdenServicio;
 import modelo.Servicio;
 import modelo.Tecnico;
 import modelo.Vehiculo;
-import controlador.ControladorCliente;
-import controlador.ControladorOrdenes;
-import controlador.ControladorServicio;
-import controlador.ControladorTecnico;
-
-import java.time.LocalDate;
 public class VistaOrdenServicio {
     private ControladorOrdenes controladorOrdenes;
     private ControladorCliente controladorCliente;
@@ -91,7 +89,7 @@ public class VistaOrdenServicio {
         }
         
         System.out.println("\nOrden de servicio finalizada. Total: $" + orden.getTotal());
-        sc.close();
+        
     }
 
 

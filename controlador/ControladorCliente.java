@@ -1,8 +1,8 @@
 package controlador;
 
 import java.util.ArrayList;
-
 import modelo.Cliente;
+import modelo.ClienteEmpresarial;
 import modelo.Persona;
 
 public class ControladorCliente {
@@ -35,7 +35,18 @@ public class ControladorCliente {
         return "Cliente agregado satisfactoriamente";
 
     }
-
+ public ClienteEmpresarial buscarClienteEmpresarial(String codigoEmpresa) {
+    for (Persona p : lista) {
+        if (p instanceof ClienteEmpresarial) {
+            ClienteEmpresarial ce = (ClienteEmpresarial)p;
+            if (ce.getCodigoEmpresa().equalsIgnoreCase(codigoEmpresa)) {
+                return ce;
+            }
+        }
+    }
+    return null;
+}
+    
 
     public Cliente buscarCliente(String id){
         for(Persona p: lista){

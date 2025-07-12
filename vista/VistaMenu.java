@@ -18,6 +18,9 @@ public class VistaMenu {
 
     public ControladorServicio controladorServicio;
     public VistaServicio vistaServicio;
+    public ControladorMenu controladorMenu;
+    private ControladorFacturaEmpresa controladorFactura;
+    private VistaFacturaEmpresa     vistaFactura;   
  
 
     public ControladorOrdenes controladorOrdenes = new ControladorOrdenes();
@@ -29,8 +32,7 @@ public class VistaMenu {
     public VistaReportes vistaReportes = new VistaReportes(controladorOrdenes);
 
 
-    public ControladorFacturaEmpresa controladorFactura = new ControladorFacturaEmpresa(controladorCliente,controladorOrdenes);
-    public VistaFacturaEmpresa vistaFactura = new VistaFacturaEmpresa(controladorFactura);
+
 
 
     public VistaMenu(ControladorCliente controladorCliente,ControladorProvedor controladorProvedor,ControladorTecnico controladorTecnico,ControladorServicio controladorServicio,VistaInsumo vistaInsumo){
@@ -50,9 +52,13 @@ public class VistaMenu {
         this.vistaOrdenServicio = new VistaOrdenServicio(this.controladorOrdenes, this.controladorCliente, this.controladorServicio, this.controladorTecnico);
 
         this.vistaInsumo = new VistaInsumo(controladorProvedor);
+         this.controladorFactura = new ControladorFacturaEmpresa(
+                                      this.controladorCliente,
+                                      this.controladorOrdenes);
+        this.vistaFactura       = new VistaFacturaEmpresa(this.controladorFactura);
+    
     }
 
-   
     
     public void mostrarMenuPrincipal() {
         int opcion;
@@ -92,7 +98,7 @@ public class VistaMenu {
                     vistaInsumo.registrarFaltaInsumos();
                     break;
                 case 7:
-                    vistaFactura.generarFacturaEmpresa(Cliente);;
+                    vistaFactura.generarFacturaEmpresa();
                     break;
                 case 8:
                     vistaReportes.mostrarIngresosPorServicios();

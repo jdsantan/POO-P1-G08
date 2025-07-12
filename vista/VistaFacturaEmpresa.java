@@ -1,20 +1,14 @@
 package vista;
 
-import controlador.ControladorFacturaEmpresa;
-import controlador.ControladorMenu;
-
-import java.util.ArrayList;
+import controlador.*;
 import java.util.Scanner;
-import modelo.Cliente;
-import modelo.Detalledelservicio;
-import modelo.FacturaEmpresa;
-import modelo.OrdenServicio;
+import modelo.*;
 
 public class VistaFacturaEmpresa {
     private ControladorFacturaEmpresa controladorFacturaEmpresa;
 
-    public VistaFacturaEmpresa(ControladorFacturaEmpresa controladorFacturaEmpresa) {
-        this.controladorFacturaEmpresa = controladorFacturaEmpresa;
+    public VistaFacturaEmpresa(ControladorFacturaEmpresa controladorFacturas) {
+        this.controladorFacturaEmpresa = controladorFacturas;
     }
 
     public void generarFacturaEmpresa() {
@@ -37,9 +31,7 @@ public class VistaFacturaEmpresa {
             return;
         }
 
-        // Generar factura
-        FacturaEmpresa factura = controladorFacturaEmpresa.generarFacturaEmpresa(codigoEmpresa, mes, año, controladorFacturaEmpresa.getListaPersonas());
-
+       FacturaEmpresa factura = controladorFacturaEmpresa.generarFacturaEmpresa(codigoEmpresa, mes, año);
         if (factura == null) {
             System.out.println("No se encontró la empresa con código: " + codigoEmpresa);
             return;
