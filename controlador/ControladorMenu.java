@@ -102,5 +102,8 @@ public class ControladorMenu {
 public ArrayList<Servicio> getListaServicios() {
         return listaServicios;
     }
+public ArrayList<OrdenServicio> getOrdenServicios(){
+    return listaOrdenes;
+}
 
 }

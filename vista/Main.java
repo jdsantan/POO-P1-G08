@@ -19,13 +19,13 @@ public class Main {
         ControladorProvedor controladorProvedor = new ControladorProvedor(controladorMenu.getListaPersonas());
         ControladorTecnico controladorTecnico = new ControladorTecnico(controladorMenu.getListaPersonas());
         ControladorServicio controladorServicio = new ControladorServicio(controladorMenu.getListaServicios());
-        ControladorOrden controladorOrden = new ControladorOrden();
+        ControladorOrden controladorOrden = new ControladorOrden(controladorMenu.getOrdenServicios());
         ControladorFacturaEmpresa controladorFacturaEmpresa = new ControladorFacturaEmpresa(controladorCliente, controladorOrden);
         VistaInsumo vistaInsumo = new VistaInsumo(controladorProvedor);
 
 
 
-        VistaMenu vistaMenu = new VistaMenu(controladorCliente,controladorProvedor,controladorTecnico,controladorServicio,vistaInsumo);
+        VistaMenu vistaMenu = new VistaMenu(controladorCliente,controladorProvedor,controladorTecnico,controladorServicio,vistaInsumo, controladorFacturaEmpresa);
         vistaMenu.mostrarMenuPrincipal();
         
     }

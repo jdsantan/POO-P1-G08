@@ -8,22 +8,22 @@ import modelo.Tecnico;
 import modelo.Vehiculo;
 
 public class ControladorOrden {
-    private ArrayList<OrdenServicio> listaOrden;
+    private ArrayList<OrdenServicio> lista;
 
-    public ControladorOrden() {
-        listaOrden = new ArrayList<>();
+    public ControladorOrden(ArrayList<OrdenServicio> lista) {
+        this.lista = lista;
     }
     public OrdenServicio crearOrden(Cliente cliente, Vehiculo vehiculo,LocalDate fecha,Tecnico tecnico){
         OrdenServicio nueva = new OrdenServicio(cliente,vehiculo,tecnico,fecha);
-        listaOrden.add(nueva);
+        lista.add(nueva);
         return nueva;
     }
     public void mostrarTodasOrdenes(){
-        for(OrdenServicio o : listaOrden){
+        for(OrdenServicio o : lista){
             System.out.println(o);
         }
     }
     public ArrayList<OrdenServicio> getListaOrdenes(){
-        return listaOrden;
+        return lista;
     }
 }
