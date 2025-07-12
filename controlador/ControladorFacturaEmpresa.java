@@ -5,6 +5,8 @@ import modelo.Cliente;
 import modelo.ClienteEmpresarial;
 import modelo.FacturaEmpresa;
 import modelo.OrdenServicio;
+import modelo.Persona;
+
 
 public class ControladorFacturaEmpresa {
     private ControladorCliente controladorCliente;
@@ -13,11 +15,26 @@ public class ControladorFacturaEmpresa {
     public ControladorFacturaEmpresa(ControladorCliente controladorCliente, ControladorOrdenes controladorOrdenes) {
         this.controladorCliente = controladorCliente;
         this.controladorOrdenes = controladorOrdenes;
+
+    }
+    public ArrayList<Cliente> ObtenerListaCliente(ArrayList<Persona>lista){
+        ArrayList<Cliente> listaClientes= new ArrayList<>();
+        for(Persona p : lista){
+            if(p instanceof Cliente){
+                Cliente c1 = (Cliente)p;
+                listaClientes.add(c1);
+            }
+        }
+        return listaClientes;
+
     }
 
-    public FacturaEmpresa generarFacturaEmpresa(String codigoEmpresa, int mes, int año, ArrayList<Cliente> listaClientes) {
+    public FacturaEmpresa generarFacturaEmpresa(String codigoEmpresa, int mes, int año, ArrayList<Persona> listaPersona) {
+
+        ArrayList<Cliente> lista = ObtenerListaCliente(listaPersona);
+
         // Buscar cliente empresarial
-        ClienteEmpresarial cliente = buscarClienteEmpresarial(codigoEmpresa, listaClientes);
+        ClienteEmpresarial cliente = buscarClienteEmpresarial(codigoEmpresa, lista);
         if (cliente == null) {
             return null;
         }
@@ -64,4 +81,9 @@ public class ControladorFacturaEmpresa {
     public boolean existeClienteEmpresarial(String codigoEmpresa, ArrayList<Cliente> listaClientes) {
         return buscarClienteEmpresarial(codigoEmpresa, listaClientes) != null;
     }
+
+    public ArrayList<Persona> getListaPersonas(){
+        return controladorCliente.getListaCliente();
+    }
+
 }

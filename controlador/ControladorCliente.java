@@ -48,4 +48,8 @@ public class ControladorCliente {
         }
         return null;
     } 
+
+    public ArrayList<Persona> getListaCliente(){
+        return lista;
+    } 
 }

@@ -1,6 +1,8 @@
 package vista;
 
 import controlador.ControladorFacturaEmpresa;
+import controlador.ControladorMenu;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 import modelo.Cliente;
@@ -36,7 +38,7 @@ public class VistaFacturaEmpresa {
         }
 
         // Generar factura
-        FacturaEmpresa factura = controladorFacturaEmpresa.generarFacturaEmpresa(codigoEmpresa, mes, año, listaClientes);
+        FacturaEmpresa factura = controladorFacturaEmpresa.generarFacturaEmpresa(codigoEmpresa, mes, año, controladorFacturaEmpresa.getListaPersonas());
 
         if (factura == null) {
             System.out.println("No se encontró la empresa con código: " + codigoEmpresa);
