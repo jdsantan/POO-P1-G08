@@ -27,7 +27,7 @@ public class VistaReporte {
                 for (Detalledelservicio detalledelservicio : orden.getDetalle()){
                     String nombreServicio = detalledelservicio.getServicio().getNombre();
                 ingresosPorServicio.put(nombreServicio,
-                    ingresosPorServicio.getOrDefault(nombreServicio, 0.0) + orden.getTotal());                   
+                    ingresosPorServicio.getOrDefault(nombreServicio, 0.0) + detalledelservicio.getSubtotal());                   
                 }
 
             }

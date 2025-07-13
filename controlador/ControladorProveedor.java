@@ -1,20 +1,19 @@
 package controlador;
 
 import java.util.ArrayList;
-
 import modelo.Persona;
-import modelo.Provedor;
+import modelo.Proveedor;
 
-public class ControladorProvedor {
+public class ControladorProveedor {
     private ArrayList<Persona> lista;
-    public ControladorProvedor(ArrayList<Persona>lista){
+    public ControladorProveedor(ArrayList<Persona> lista){
         this.lista = lista;
     }
 
-    public String agregarProvedor(Provedor provedor){
+    public String agregarProvedor(Proveedor provedor){
         for(Persona p : lista){
-            if(p instanceof Provedor){
-                Provedor i = (Provedor)p;
+            if(p instanceof Proveedor){
+                Proveedor i = (Proveedor)p;
                 if(i.getId().equalsIgnoreCase(provedor.getId())){
                         System.out.printf("   %s | %s | %s | %s%n",
                         i.getId(), i.getNombre(),
@@ -26,8 +25,8 @@ public class ControladorProvedor {
         }
         lista.add(provedor);
         for(Persona p: lista){
-            if(p instanceof Provedor){
-                Provedor i = (Provedor)p;
+            if(p instanceof Proveedor){
+                Proveedor i = (Proveedor)p;
                         System.out.printf("   %s | %s | %s | %s%n",
                         i.getId(), i.getNombre(),
                         i.getTelefono(), i.getDescripcion());

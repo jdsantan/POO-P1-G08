@@ -1,17 +1,17 @@
 package vista;
 
+import controlador.ControladorProveedor;
+import java.util.ArrayList;
 import java.util.Scanner;
 import modelo.FaltaInsumo;
 import modelo.Persona;
-import modelo.Provedor;
-import controlador.ControladorProvedor;
-import java.util.ArrayList;
+import modelo.Proveedor;
 
 public class VistaInsumo {
-    private ControladorProvedor controladorProvedor;
+    private ControladorProveedor controladorProvedor;
     private Scanner scanner;
 
-    public VistaInsumo(ControladorProvedor controladorProvedor) {
+    public VistaInsumo(ControladorProveedor controladorProvedor) {
         this.controladorProvedor = controladorProvedor;
         scanner = new Scanner(System.in);
     }
@@ -31,8 +31,8 @@ public class VistaInsumo {
 
         int i =0;
         for(Persona p : provedores){
-            if(p instanceof Provedor){
-                Provedor pr = (Provedor)p;
+            if(p instanceof Proveedor){
+                Proveedor pr = (Proveedor)p;
                 System.out.println((i+1) + ". "+ pr.getNombre());
                 i++;
             }
@@ -49,7 +49,7 @@ public class VistaInsumo {
         int indexReal = -1;
         for(int j =0; j<provedores.size();j++){
             Persona p = provedores.get(j);
-            if(p instanceof Provedor){
+            if(p instanceof Proveedor){
                 contador++;
                 if(opcion == contador){
                     indexReal = j;
@@ -58,7 +58,7 @@ public class VistaInsumo {
             }
         }
         if (indexReal != -1) {
-            Provedor provedorSeleccionado = (Provedor) provedores.get(indexReal);
+            Proveedor provedorSeleccionado = (Proveedor) provedores.get(indexReal);
             FaltaInsumo falta = new FaltaInsumo(descripcion, provedorSeleccionado);
             System.out.println("Falta registrada correctamente:\n" + falta);
         } else {

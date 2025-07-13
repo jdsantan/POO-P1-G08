@@ -5,7 +5,7 @@ import modelo.Cliente;
 import modelo.ClienteEmpresarial;
 import modelo.OrdenServicio;
 import modelo.Persona;
-import modelo.Provedor;
+import modelo.Proveedor;
 import modelo.Servicio;
 import modelo.Tecnico;
 import modelo.Vehiculo;
@@ -14,7 +14,7 @@ public class ControladorMenu {
     ArrayList<Tecnico> listaTecnicos;
     ArrayList<Servicio> listaServicios;
     ArrayList<Cliente> listaClientes;
-    ArrayList<Provedor> listaProvedores;
+    ArrayList<Proveedor> listaProvedores;
     ArrayList<Persona> listaPersonas;
     ArrayList<OrdenServicio> listaOrdenes;
 
@@ -28,14 +28,14 @@ public class ControladorMenu {
     }
     public void Incializar() {
 
-    listaPersonas.add(new Tecnico("0928497973","Juan Santana","0981124061","Mecánico"));
-    listaPersonas.add(new Tecnico("0928497974","Pedro Pérez","0981124062","Electricista"));
+    listaPersonas.add(new Tecnico("T001","Juan Peña","0981124063","Mecánico"));
+    listaPersonas.add(new Tecnico("T002","Pedro Pérez","0981124062","Electricista"));
     
-    listaPersonas.add(new Provedor("POO1","Nankang","0974557","Proveedor de baterias"));
-    listaPersonas.add(new Provedor("POO2","Pirelli","0974558","Proveedor de llantas"));
+    listaPersonas.add(new Proveedor("POO1","Nankang","0974557","Proveedor de baterias"));
+    listaPersonas.add(new Proveedor("POO2","Pirelli","0974558","Proveedor de llantas"));
 
     listaPersonas.add(new Cliente("C001", "Carlos Pérez", "0987654321", "Florida 123", false));
-    listaPersonas.add(new ClienteEmpresarial("C002", "Ana Gómez", "0987654322", "Av. Siempre Viva 456", true,"Nankang","E001"));
+    listaPersonas.add(new ClienteEmpresarial("C002", "Ana Gómez", "0987654322", "Av. Siempre Viva 456", true,"Agro","E001"));
     listaPersonas.add(new Cliente("C003", "Luis Rodríguez", "0987654323", "Calle Falsa 789", false));
     listaPersonas.add(new ClienteEmpresarial("C004", "María López", "0987654324", "Calle Real 101", true,"MOTORS","E002"));
 
@@ -66,32 +66,9 @@ public class ControladorMenu {
     orden2.agregarDetalle(listaServicios.get(3), 1);
     orden3.agregarDetalle(listaServicios.get(4), 1);
 
-    /* 
-    listaTecnicos.add(new Tecnico("0928497973","Juan Santana","0981124061","Mecánico"));
-    listaTecnicos.add(new Tecnico("0928497974","Pedro Pérez","0981124062","Electricista"));
-
-    listaProvedores.add(new Provedor("POO1","Nankang","0974557","Proveedor de baterias"));o
-    listaProvedores.add(new Provedor("POO2","Pirelli","0974558","Proveedor de llantas"));
-
-    listaClientes.add(new Cliente("C001", "Carlos Pérez", "0987654321", "Florida 123", false));
-    listaClientes.add(new Cliente("C002", "Ana Gómez", "0987654322", "Av. Siempre Viva 456", true));
-    listaClientes.add(new Cliente("C003", "Luis Rodríguez", "0987654323", "Calle Falsa 789", false));
-    listaClientes.add(new Cliente("C004", "María López", "0987654324", "Calle Real 101", true));
-
-  
+   
     }
-    public ArrayList<Tecnico> getListaTecnicos() {
-        return listaTecnicos;
-    }
-
-
-    }
-    public ArrayList<Cliente> getListaClientes() {
-        return listaClientes;
-    }
-*/
-    }
-    public ArrayList<Provedor> getListaProvedores() {
+    public ArrayList<Proveedor> getListaProvedores() {
         return listaProvedores;    
          
 }

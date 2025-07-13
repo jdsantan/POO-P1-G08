@@ -2,7 +2,6 @@ package vista;
 import controlador.ControladorTecnico;
 import java.util.ArrayList;
 import java.util.Scanner;
-
 import modelo.Persona;
 import modelo.Tecnico;
 
@@ -45,7 +44,7 @@ public class VistaTecnico {
             switch (opcion) {
                 case 1:
                     
-                    System.out.print("Cédula: ");
+                    System.out.print("ID: ");
                     String ced = sc.nextLine();
                     System.out.print("Nombre: ");
                     String nom = sc.nextLine();

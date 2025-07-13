@@ -2,9 +2,9 @@ package modelo;
 
 public class FaltaInsumo {
     private String descripcion;
-    private Provedor proveedor;
+    private Proveedor proveedor;
 
-    public FaltaInsumo(String descripcion, Provedor proveedor) {
+    public FaltaInsumo(String descripcion, Proveedor proveedor) {
         this.descripcion = descripcion;
         this.proveedor = proveedor;
     }
@@ -13,7 +13,7 @@ public class FaltaInsumo {
         return descripcion;
     }
 
-    public Provedor getProveedor() {
+    public Proveedor getProveedor() {
         return proveedor;
     }
 

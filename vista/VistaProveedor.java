@@ -1,18 +1,16 @@
 package vista;
 
-import controlador.ControladorProvedor;
-
+import controlador.ControladorProveedor;
 import java.util.ArrayList;
 import java.util.Scanner;
-
 import modelo.Persona;
-import modelo.Provedor;
+import modelo.Proveedor;
 
 
-public class VistaProvedor {
-    public ControladorProvedor control;
+public class VistaProveedor {
+    public ControladorProveedor control;
     Scanner sc;
-    public VistaProvedor(ControladorProvedor control){
+    public VistaProveedor(ControladorProveedor control){
         this.control = control;
         sc= new Scanner(System.in);
     }
@@ -23,8 +21,8 @@ public class VistaProvedor {
             } else {
                 System.out.println("\n>> Proveedores registrados:");
                 for (Persona p : lista) {
-                    if(p instanceof Provedor){
-                        Provedor t = (Provedor)p;
+                    if(p instanceof Proveedor){
+                        Proveedor t = (Proveedor)p;
                         System.out.printf("   %s | %s | %s | %s%n",
                         t.getId(), t.getNombre(),
                         t.getTelefono(), t.getDescripcion());
@@ -65,7 +63,7 @@ public class VistaProvedor {
         System.out.println("Ingrese la descripcion del provedor: ");
         String descripcion = sc.nextLine();
         
-        Provedor p1 = new Provedor(id, nombre, telefono, descripcion);
+        Proveedor p1 = new Proveedor(id, nombre, telefono, descripcion);
         String mensaje = control.agregarProvedor(p1);
         System.out.println(mensaje);  
              

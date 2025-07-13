@@ -26,8 +26,8 @@ public class VistaServicio {
                         s.getPrecio());
                 }
             }
-
-        do {
+        
+        
             System.out.println("\n=== MENÚ SERVICIOS ===");
             System.out.println("1) Agregar servicio");
             System.out.println("2) Editar precio de servicio");
@@ -52,9 +52,9 @@ public class VistaServicio {
                     System.out.println("Opción inválida, intenta de nuevo.");
             }
         } while (opcion != 3);
-    }while (opcion != 3);
+    } 
     
-    }
+    
  public void agregarServicio(){
         System.out.println("Codigo de Servicio");
         String codigo = sc.nextLine();

@@ -52,7 +52,5 @@ public class ControladorServicio {
 public ArrayList<Servicio> getListaServicios() {
         return lista;
     }
-    public ArrayList<Servicio> getServicios() {
-        return getServicios();
-}
+
 }
