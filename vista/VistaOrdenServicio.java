@@ -89,7 +89,6 @@ public class VistaOrdenServicio {
         }
         
         System.out.println("\nOrden de servicio finalizada. Total: $" + orden.getTotal());
-        sc.close();
     }
 
 
