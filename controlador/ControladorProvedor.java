@@ -16,7 +16,9 @@ public class ControladorProvedor {
             if(p instanceof Provedor){
                 Provedor i = (Provedor)p;
                 if(i.getId().equalsIgnoreCase(provedor.getId())){
-                System.out.println(i);
+                        System.out.printf("   %s | %s | %s | %s%n",
+                        i.getId(), i.getNombre(),
+                        i.getTelefono(), i.getDescripcion());
                 return "Provedor ya existe";
                 }
             }
@@ -26,7 +28,9 @@ public class ControladorProvedor {
         for(Persona p: lista){
             if(p instanceof Provedor){
                 Provedor i = (Provedor)p;
-                System.out.println(i);
+                        System.out.printf("   %s | %s | %s | %s%n",
+                        i.getId(), i.getNombre(),
+                        i.getTelefono(), i.getDescripcion());
             }
         }
         return "Provedor agregado satisfactoriamente";

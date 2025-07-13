@@ -1,8 +1,13 @@
 package vista;
 
 import controlador.ControladorProvedor;
+
+import java.util.ArrayList;
 import java.util.Scanner;
+
+import modelo.Persona;
 import modelo.Provedor;
+
 
 public class VistaProvedor {
     public ControladorProvedor control;
@@ -12,6 +17,20 @@ public class VistaProvedor {
         sc= new Scanner(System.in);
     }
     public void mostrarMenuProvedor(){
+            ArrayList<Persona> lista = control.getListaProvedores();
+            if (lista.isEmpty()) {
+                System.out.println("\n>> No hay Proveedores registrados.");
+            } else {
+                System.out.println("\n>> Proveedores registrados:");
+                for (Persona p : lista) {
+                    if(p instanceof Provedor){
+                        Provedor t = (Provedor)p;
+                        System.out.printf("   %s | %s | %s | %s%n",
+                        t.getId(), t.getNombre(),
+                        t.getTelefono(), t.getDescripcion());
+                    }
+                }
+            }      
         int opcion;
         do {
             System.out.println("\n=== MENÚ Provedor ===");

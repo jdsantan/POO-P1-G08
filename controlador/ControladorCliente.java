@@ -18,8 +18,10 @@ public class ControladorCliente {
             if(p instanceof Cliente){
                 Cliente c = (Cliente)p;
                 if(c.getId().equalsIgnoreCase(CLnuevo.getId())){
-                System.out.println(c);
-                return "Usuario ya existe";
+                        System.out.printf("   %s | %s | %s | %s | %s%n",
+                        c.getId(), c.getNombre(),
+                        c.getTelefono(), c.getDireccion(),c.getTipoCliente());
+                return ">>Usuario ya existe";
                 }
             }
         }
@@ -28,7 +30,9 @@ public class ControladorCliente {
         for(Persona p: lista){
             if(p instanceof Cliente){
                 Cliente c1 = (Cliente)p;
-                System.out.println(c1);
+                        System.out.printf("   %s | %s | %s | %s | %s%n",
+                        c1.getId(), c1.getNombre(),
+                        c1.getTelefono(), c1.getDireccion(),c1.getTipoCliente());
             }
 
         }

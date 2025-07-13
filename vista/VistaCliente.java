@@ -1,8 +1,12 @@
 package vista;
 
 import controlador.ControladorCliente;
+
+import java.util.ArrayList;
 import java.util.Scanner;
 import modelo.Cliente;
+import modelo.Persona;
+
 
 public class VistaCliente {
     private ControladorCliente controlador;
@@ -13,6 +17,20 @@ public class VistaCliente {
     public void mostrarMenuCliente(){
         int opcion;
         do {
+            ArrayList<Persona> lista = controlador.getListaCliente();
+            if (lista.isEmpty()) {
+                System.out.println("\n>> No hay clientes registrados.");
+            } else {
+                System.out.println("\n>> Clientes registrados:");
+                for (Persona p : lista) {
+                    if(p instanceof Cliente){
+                        Cliente c = (Cliente)p;
+                        System.out.printf("   %s | %s | %s | %s | %s%n",
+                        c.getId(), c.getNombre(),
+                        c.getTelefono(), c.getDireccion(),c.getTipoCliente());
+                    }
+                }
+            }
             System.out.println("\n=== MENÚ Cliente ===");
             System.out.println("1. Agregar cliente");
             System.out.println("2. Regresar al menu Principal");
