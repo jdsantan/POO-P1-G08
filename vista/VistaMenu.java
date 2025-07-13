@@ -67,15 +67,15 @@ public class VistaMenu {
         int opcion;
         do {
             System.out.println("\n===== Menú Principal =====");
-            System.out.println("1. Administrar Clietes"); 
-            System.out.println("2. Administrar proveedores");
-            System.out.println("3. Administrar técnicos");
-            System.out.println("4. Administrar servicios");
-            System.out.println("5. Generar orden de servicios");
-            System.out.println("6. Registrar falta de insumos");
-            System.out.println("7. Generar facturas a empresas");
-            System.out.println("8. Reporte de ingresos por servicios");
-            System.out.println("9. Reporte de atenciones por técnico");
+            System.out.println("1. Administrar Clientes"); 
+            System.out.println("2. Administrar Proveedores");
+            System.out.println("3. Administrar Técnicos");
+            System.out.println("4. Administrar Servicios");
+            System.out.println("5. Generar Orden de Servicios");
+            System.out.println("6. Registrar Falta de Insumos");
+            System.out.println("7. Generar Facturas a Empresas");
+            System.out.println("8. Reporte de Ingresos por Servicios");
+            System.out.println("9. Reporte de Atenciones por Técnico");
             System.out.println("10. Salir");
             System.out.print("Seleccione una opción: ");
             opcion = sc.nextInt();
