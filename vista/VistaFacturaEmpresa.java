@@ -24,7 +24,6 @@ public class VistaFacturaEmpresa {
 
         System.out.print("Ingrese el mes (1-12): ");
         int mes = sc.nextInt();
-        sc.close();
 
         // Validar mes
         if (mes < 1 || mes > 12) {
