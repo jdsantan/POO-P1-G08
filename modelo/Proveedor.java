@@ -16,7 +16,7 @@ public class Proveedor extends Persona {
 
     @Override
     public String toString() {
-        return "Provedor: " + super.toString() + ", Descripcion: " + descripcion;
+        return "Proveedor: " + super.toString() + ", Descripcion: " + descripcion;
     }
     
     
