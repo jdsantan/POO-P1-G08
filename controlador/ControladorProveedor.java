@@ -10,20 +10,20 @@ public class ControladorProveedor {
         this.lista = lista;
     }
 
-    public String agregarProvedor(Proveedor provedor){
+    public String agregarProvedor(Proveedor proveedor){
         for(Persona p : lista){
             if(p instanceof Proveedor){
                 Proveedor i = (Proveedor)p;
-                if(i.getId().equalsIgnoreCase(provedor.getId())){
+                if(i.getId().equalsIgnoreCase(proveedor.getId())){
                         System.out.printf("   %s | %s | %s | %s%n",
                         i.getId(), i.getNombre(),
                         i.getTelefono(), i.getDescripcion());
-                return "Provedor ya existe";
+                return "Proveedor ya existe";
                 }
             }
 
         }
-        lista.add(provedor);
+        lista.add(proveedor);
         for(Persona p: lista){
             if(p instanceof Proveedor){
                 Proveedor i = (Proveedor)p;
@@ -32,7 +32,7 @@ public class ControladorProveedor {
                         i.getTelefono(), i.getDescripcion());
             }
         }
-        return "Provedor agregado satisfactoriamente";
+        return "Proveedor agregado satisfactoriamente";
     }
     
     public ArrayList<Persona> getListaProvedores(){
