@@ -37,12 +37,7 @@ public class VistaInsumo {
                 i++;
             }
         }
-        /* 
-        for (int i = 0; i < provedores.size(); i++) {
-            System.out.println((i + 1) + ". " + provedores.get(i).getNombre());
-        }
-         */
-
+       
         int opcion = scanner.nextInt();
         scanner.nextLine();
         int contador = 0;
@@ -64,15 +59,7 @@ public class VistaInsumo {
         } else {
             System.out.println("Opción inválida.");
         }
-/*
-        if (opcion > 0 && opcion <= provedores.size()) {
-            Provedor provedorSeleccionado = provedores.get(opcion - 1);
-            FaltaInsumo falta = new FaltaInsumo(descripcion, provedorSeleccionado);
-            System.out.println("Falta registrada correctamente:\n" + falta);
-        } else {
-            System.out.println("Opción inválida.");
-        }
-             */
+
     }
 
 }
