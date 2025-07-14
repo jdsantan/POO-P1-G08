@@ -14,7 +14,7 @@ public class ControladorMenu {
     ArrayList<Tecnico> listaTecnicos;
     ArrayList<Servicio> listaServicios;
     ArrayList<Cliente> listaClientes;
-    ArrayList<Proveedor> listaProvedores;
+    ArrayList<Proveedor> listaProveedores;
     ArrayList<Persona> listaPersonas;
     ArrayList<OrdenServicio> listaOrdenes;
 
@@ -22,7 +22,7 @@ public class ControladorMenu {
         listaClientes = new ArrayList<>();
         listaTecnicos = new ArrayList<>();
         listaServicios = new ArrayList<>();
-        listaProvedores = new ArrayList<>();
+        listaProveedores = new ArrayList<>();
         listaPersonas = new ArrayList<>();
         listaOrdenes = new ArrayList<>();
     }
@@ -68,8 +68,8 @@ public class ControladorMenu {
 
    
     }
-    public ArrayList<Proveedor> getListaProvedores() {
-        return listaProvedores;    
+    public ArrayList<Proveedor> getListaProveedores() {
+        return listaProveedores;    
          
 }
  

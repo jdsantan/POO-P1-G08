@@ -10,7 +10,7 @@ public class ControladorProveedor {
         this.lista = lista;
     }
 
-    public String agregarProvedor(Proveedor proveedor){
+    public String agregarProveedor(Proveedor proveedor){
         for(Persona p : lista){
             if(p instanceof Proveedor){
                 Proveedor i = (Proveedor)p;
