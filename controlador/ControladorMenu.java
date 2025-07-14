@@ -31,8 +31,8 @@ public class ControladorMenu {
     listaPersonas.add(new Tecnico("T001","Juan Peña","0981124063","Mecánico"));
     listaPersonas.add(new Tecnico("T002","Pedro Pérez","0981124062","Electricista"));
     
-    listaPersonas.add(new Proveedor("POO1","Nankang","0974557","Proveedor de baterias"));
-    listaPersonas.add(new Proveedor("POO2","Pirelli","0974558","Proveedor de llantas"));
+    listaPersonas.add(new Proveedor("P001","Nankang","0974557","Proveedor de baterias"));
+    listaPersonas.add(new Proveedor("P002","Pirelli","0974558","Proveedor de llantas"));
 
     listaPersonas.add(new Cliente("C001", "Carlos Pérez", "0987654321", "Florida 123", false));
     listaPersonas.add(new ClienteEmpresarial("C002", "Ana Gómez", "0987654322", "Av. Siempre Viva 456", true,"Agro","E001"));

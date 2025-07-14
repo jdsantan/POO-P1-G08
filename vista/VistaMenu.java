@@ -67,6 +67,7 @@ public class VistaMenu {
         int opcion;
         do {
             System.out.println("\n===== Menú Principal =====");
+            System.out.println("====Bienvenido a TecnoCar====");
             System.out.println("1. Administrar Clientes"); 
             System.out.println("2. Administrar Proveedores");
             System.out.println("3. Administrar Técnicos");
