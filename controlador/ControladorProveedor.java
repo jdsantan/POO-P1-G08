@@ -10,7 +10,7 @@ public class ControladorProveedor {
         this.lista = lista;
     }
 
-    public String agregarProveedor(Proveedor proveedor){
+    public String agregarProvedor(Proveedor proveedor){
         for(Persona p : lista){
             if(p instanceof Proveedor){
                 Proveedor i = (Proveedor)p;
@@ -18,7 +18,7 @@ public class ControladorProveedor {
                         System.out.printf("   %s | %s | %s | %s%n",
                         i.getId(), i.getNombre(),
                         i.getTelefono(), i.getDescripcion());
-                return "Provedor ya existe";
+                return "Proveedor ya existe";
                 }
             }
 
