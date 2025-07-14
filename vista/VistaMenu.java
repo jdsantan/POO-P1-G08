@@ -10,8 +10,8 @@ public class VistaMenu {
     public ControladorCliente controladorCliente;
     public VistaCliente vistaCliente;
 
-    public ControladorProveedor controladorProvedor;
-    public VistaProveedor vistaProvedor;
+    public ControladorProveedor controladorProveedor;
+    public VistaProveedor vistaProveedor;
 
     public ControladorTecnico controladorTecnico;
     public VistaTecnico vistaTecnico;
@@ -35,13 +35,13 @@ public class VistaMenu {
 
 
 
-    public VistaMenu(ControladorCliente controladorCliente,ControladorProveedor controladorProvedor,ControladorTecnico controladorTecnico,ControladorServicio controladorServicio,VistaInsumo vistaInsumo, ControladorFacturaEmpresa controladorFacturaEmpresa,ControladorOrden controladorOrden) {
+    public VistaMenu(ControladorCliente controladorCliente,ControladorProveedor controladorProveedor,ControladorTecnico controladorTecnico,ControladorServicio controladorServicio,VistaInsumo vistaInsumo, ControladorFacturaEmpresa controladorFacturaEmpresa,ControladorOrden controladorOrden) {
 
         this.controladorCliente = controladorCliente;
         this.vistaCliente = new VistaCliente(this.controladorCliente); 
 
-        this.controladorProvedor = controladorProvedor;
-        this.vistaProvedor = new VistaProveedor(this.controladorProvedor);
+        this.controladorProveedor = controladorProveedor;
+        this.vistaProveedor = new VistaProveedor(this.controladorProveedor);
 
         this.controladorTecnico = controladorTecnico;
         this.vistaTecnico = new VistaTecnico(this.controladorTecnico);
@@ -52,7 +52,7 @@ public class VistaMenu {
 
         this.vistaOrdenServicio = new VistaOrdenServicio(this.controladorOrden, this.controladorCliente, this.controladorServicio, this.controladorTecnico);
 
-        this.vistaInsumo = new VistaInsumo(controladorProvedor);
+        this.vistaInsumo = new VistaInsumo(controladorProveedor);
          this.controladorFactura = new ControladorFacturaEmpresa(
                                       this.controladorCliente,
                                       this.controladorOrden);
@@ -87,7 +87,7 @@ public class VistaMenu {
                     vistaCliente.mostrarMenuCliente();
                     break;
                 case 2:
-                    vistaProvedor.mostrarMenuProvedor();
+                    vistaProveedor.mostrarMenuProveedor();
                     break;
                 case 3:
                     vistaTecnico.mostrarmenuTecnicos();

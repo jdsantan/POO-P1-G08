@@ -16,17 +16,17 @@ public class Main {
         controladorMenu.Incializar();
 
         ControladorCliente controladorCliente = new ControladorCliente(controladorMenu.getListaPersonas());
-        ControladorProveedor controladorProvedor = new ControladorProveedor(controladorMenu.getListaPersonas());
+        ControladorProveedor controladorProveedor = new ControladorProveedor(controladorMenu.getListaPersonas());
         ControladorTecnico controladorTecnico = new ControladorTecnico(controladorMenu.getListaPersonas());
         ControladorServicio controladorServicio = new ControladorServicio(controladorMenu.getListaServicios());
         ControladorOrden controladorOrden = new ControladorOrden(controladorMenu.getOrdenServicios());
         ControladorFacturaEmpresa controladorFacturaEmpresa = new ControladorFacturaEmpresa(controladorCliente, controladorOrden);
-        VistaInsumo vistaInsumo = new VistaInsumo(controladorProvedor);
+        VistaInsumo vistaInsumo = new VistaInsumo(controladorProveedor);
        
 
 
 
-        VistaMenu vistaMenu = new VistaMenu(controladorCliente,controladorProvedor,controladorTecnico,controladorServicio,vistaInsumo, controladorFacturaEmpresa,controladorOrden);
+        VistaMenu vistaMenu = new VistaMenu(controladorCliente,controladorProveedor,controladorTecnico,controladorServicio,vistaInsumo, controladorFacturaEmpresa,controladorOrden);
         vistaMenu.mostrarMenuPrincipal();
         
     }

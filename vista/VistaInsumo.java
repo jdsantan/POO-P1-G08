@@ -8,11 +8,11 @@ import modelo.Persona;
 import modelo.Proveedor;
 
 public class VistaInsumo {
-    private ControladorProveedor controladorProvedor;
+    private ControladorProveedor controladorProveedor;
     private Scanner scanner;
 
-    public VistaInsumo(ControladorProveedor controladorProvedor) {
-        this.controladorProvedor = controladorProvedor;
+    public VistaInsumo(ControladorProveedor controladorProveedor) {
+        this.controladorProveedor = controladorProveedor;
         scanner = new Scanner(System.in);
     }
 
@@ -21,8 +21,8 @@ public class VistaInsumo {
         System.out.print("Descripción del insumo: ");
         String descripcion = scanner.nextLine();
 
-        ArrayList<Persona> provedores = controladorProvedor.getListaProvedores();
-        if (provedores.isEmpty()) {
+        ArrayList<Persona> proveedores = controladorProveedor.getListaProveedores();
+        if (proveedores.isEmpty()) {
             System.out.println("No hay proveedores registrados.");
             return;
         }
@@ -30,7 +30,7 @@ public class VistaInsumo {
         System.out.println("Seleccione el proveedor:");
 
         int i =0;
-        for(Persona p : provedores){
+        for(Persona p : proveedores){
             if(p instanceof Proveedor){
                 Proveedor pr = (Proveedor)p;
                 System.out.println((i+1) + ". "+ pr.getNombre());
@@ -42,8 +42,8 @@ public class VistaInsumo {
         scanner.nextLine();
         int contador = 0;
         int indexReal = -1;
-        for(int j =0; j<provedores.size();j++){
-            Persona p = provedores.get(j);
+        for(int j =0; j<proveedores.size();j++){
+            Persona p = proveedores.get(j);
             if(p instanceof Proveedor){
                 contador++;
                 if(opcion == contador){
@@ -53,7 +53,7 @@ public class VistaInsumo {
             }
         }
         if (indexReal != -1) {
-            Proveedor provedorSeleccionado = (Proveedor) provedores.get(indexReal);
+            Proveedor provedorSeleccionado = (Proveedor) proveedores.get(indexReal);
             FaltaInsumo falta = new FaltaInsumo(descripcion, provedorSeleccionado);
             System.out.println("Falta registrada correctamente:\n" + falta);
         } else {
